@@ -478,15 +478,15 @@ extension GolootloWebController:LocationServiceDelegate{
                        
                        alertController.addAction(UIAlertAction.init(title: "Settings", style: .default, handler: { (action) in
                        
-                           if let url = URL(string:UIApplicationOpenSettingsURLString) {
-                               if UIApplication.shared.canOpenURL(url) {
-                                   if #available(iOS 10.0, *) {
-                                       UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                   } else {
-                                       UIApplication.shared.openURL(url)
-                                   }
-                               }
-                           }
+//                           if let url = URL(string:UIApplicationOpenSettingsURLString) {
+//                               if UIApplication.shared.canOpenURL(url) {
+//                                   if #available(iOS 10.0, *) {
+//                                       UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                                   } else {
+//                                       UIApplication.shared.openURL(url)
+//                                   }
+//                               }
+//                           }
                            
                        }))
                        
