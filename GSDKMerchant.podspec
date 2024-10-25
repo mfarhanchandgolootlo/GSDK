@@ -34,15 +34,11 @@ TODO: Add long description of the pod here.
   
   s.script_phase = { :name => 'Disable Code Signing', :script => 'export CODE_SIGNING_ALLOWED=NO', :execution_position => :before_compile }
 
-#   s.resource_bundles = {
-#     'GSDKMerchant' => ['GSDKMerchant/assets/*.xcassets}']
-#   }
-
     s.resource_bundles = {
-        'GSDKMerchant' => ['Assests/**']
+        'GSDKMerchant' => ['Assests/**/*.{imageset}']
     }
    
-#   s.resources = 'GSDKMerchant/assets/*.xcassets'
+   s.resources = 'Assests/**/*.{imageset}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

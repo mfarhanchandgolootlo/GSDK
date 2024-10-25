@@ -403,6 +403,11 @@ import CoreLocation
         let bundle = Bundle(for: type(of: self))
         let podBundle = Bundle(for: self.classForCoder)
         
+        let array = PodAssetHelper.assets(inPod: "GSDKMerchant")
+        print(array)
+        //NSArray* array = [PodAsset assetsInPod:@"TestPod"];
+            
+//        let podBundle = Bundle(for: type(of: GSDKMerchant.self))
         guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
 
         gIcon = UIImageView.init(image: image)
@@ -1085,4 +1090,42 @@ extension UIEdgeInsets {
     }
     
     
+}
+
+
+class PodAssetHelper {
+    
+    static func assets(inPod podName: String) -> [String]? {
+        guard let bundle = self.bundleContains(podName: podName) else { return nil }
+        
+        let bundleRoot = bundle.bundlePath
+        let fileManager = FileManager.default
+        
+        do {
+            let paths = try fileManager.contentsOfDirectory(atPath: bundleRoot)
+            return paths
+        } catch {
+            print("Error accessing bundle contents: \(error)")
+            return nil
+        }
+    }
+    
+    static func bundleContains(podName: String) -> Bundle? {
+        // Search all bundles
+        for bundle in Bundle.allBundles {
+            if let bundlePath = bundle.path(forResource: podName, ofType: "xcassets") {
+                return bundle
+            }
+        }
+        
+        // Search all frameworks
+        for bundle in Bundle.allFrameworks {
+            if let bundlePath = bundle.path(forResource: podName, ofType: "xcassets") {
+                return bundle
+            }
+        }
+        
+        // Some pods may not use "resource_bundles"; check the pod's podspec if needed
+        return nil
+    }
 }
