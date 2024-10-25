@@ -27,7 +27,7 @@
 		CD5C85CE2CCB964E001EF934 /* UIView+AnimateGIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C85B32CCB964E001EF934 /* UIView+AnimateGIcon.swift */; };
 		CDC71C6E2CCBB1EF002672B0 /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC71C6D2CCBB1EF002672B0 /* knConstraints.swift */; };
 		CDC71C792CCBBBC3002672B0 /* Golootlo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC71C782CCBBBC3002672B0 /* Golootlo.storyboard */; };
-		CDC71C7D2CCBBEDC002672B0 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC71C7C2CCBBEDC002672B0 /* assets.xcassets */; };
+		CDC71C842CCBC74B002672B0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC71C832CCBC74B002672B0 /* Media.xcassets */; };
 		D2D62401DD3185D6775963B44471FEA0 /* Pods-GSDKMerchant_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA40B5422C342CC8B0684FB4F58BC73 /* Pods-GSDKMerchant_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -85,7 +85,7 @@
 		CD5C85BF2CCB964E001EF934 /* GolootloWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolootloWebController.swift; sourceTree = "<group>"; };
 		CDC71C6D2CCBB1EF002672B0 /* knConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
 		CDC71C782CCBBBC3002672B0 /* Golootlo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Golootlo.storyboard; sourceTree = "<group>"; };
-		CDC71C7C2CCBBEDC002672B0 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		CDC71C832CCBC74B002672B0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CF04C9CE14EF4D41FE1CF4864617152F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D44729ED51D42E1E31A75EBFC98BEE50 /* Pods-GSDKMerchant_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GSDKMerchant_Example.modulemap"; sourceTree = "<group>"; };
 		E2C50DA6C8ABAA5C3CAA30F7E73122CC /* Pods-GSDKMerchant_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GSDKMerchant_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -273,15 +273,23 @@
 		CD5C85C32CCB964E001EF934 /* GolootloWebViewLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				CDC71C782CCBBBC3002672B0 /* Golootlo.storyboard */,
 				CD5C85B22CCB964E001EF934 /* Constants */,
 				CD5C85B52CCB964E001EF934 /* Extension */,
 				CD5C85B72CCB964E001EF934 /* LocationManager */,
 				CD5C85B92CCB964E001EF934 /* Protocols */,
 				CD5C85BD2CCB964E001EF934 /* Scanner */,
 				CD5C85BF2CCB964E001EF934 /* GolootloWebController.swift */,
+				CDC71C782CCBBBC3002672B0 /* Golootlo.storyboard */,
 			);
 			path = GolootloWebViewLibrary;
+			sourceTree = "<group>";
+		};
+		CDC71C802CCBC713002672B0 /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				CDC71C832CCBC74B002672B0 /* Media.xcassets */,
+			);
+			path = Assests;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -306,7 +314,7 @@
 		D837B1C74909DB126C69A2110C078A2E /* GSDKMerchant */ = {
 			isa = PBXGroup;
 			children = (
-				CDC71C7C2CCBBEDC002672B0 /* assets.xcassets */,
+				CDC71C802CCBC713002672B0 /* Assests */,
 				CD5C857C2CCB9088001EF934 /* Classes */,
 				A0B90C70F3F445AEBC9C7E5C30DD8237 /* Pod */,
 				C5F9774548E7DC5F2B56BE1790A378ED /* Support Files */,
@@ -454,8 +462,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC71C842CCBC74B002672B0 /* Media.xcassets in Resources */,
 				CDC71C792CCBBBC3002672B0 /* Golootlo.storyboard in Resources */,
-				CDC71C7D2CCBBEDC002672B0 /* assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
