@@ -168,8 +168,12 @@ import CoreLocation
         
         closeButton = UIButton.init()
         type(of: self)
+        
         let bundle = Bundle(for: type(of: self))
-        let image = UIImage(named: "Close Icon", in: bundle, compatibleWith: nil)
+        
+        let podBundle = Bundle(for: self.classForCoder)
+        
+        let image = UIImage(named: "Close Icon", in: podBundle, compatibleWith: nil)
         closeButton!.setImage(image, for: .normal)
         closeButton!.tintColor = .white
         closeButton?.layer.cornerRadius = 22
@@ -278,9 +282,13 @@ import CoreLocation
         NSLayoutConstraint.activate([centerY, centerX, width, height])
         
         let bundle              = Bundle(for: type(of: self))
-        let imageView           = UIImageView.init(image:UIImage(named: "Sad Face", in: bundle, compatibleWith: nil)!)
-        imageView.contentMode   = .scaleAspectFit
         
+        let podBundle = Bundle(for: self.classForCoder)
+//        let smpleImg = UIImageView.init(image:UIImage(named: "Sad Face", in: podBundle, compatibleWith: nil)!)
+        
+        let imageView           = UIImageView.init(image:UIImage(named: "Sad Face", in: podBundle, compatibleWith: nil)!)
+        imageView.contentMode   = .scaleAspectFit
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         errorView?.addSubview(imageView)
@@ -365,7 +373,9 @@ import CoreLocation
     private func setupBGImage(){
         
         let bundle = Bundle(for: type(of: self))
-        guard let image = UIImage(named: "Golootlo Webview Background", in: bundle, compatibleWith: nil) else {return}
+        let podBundle = Bundle(for: self.classForCoder)
+        
+        guard let image = UIImage(named: "Golootlo Webview Background", in: podBundle, compatibleWith: nil) else {return}
         
         bgImageView = UIImageView.init(image: image)
         bgImageView?.contentMode = .scaleAspectFill
@@ -391,7 +401,9 @@ import CoreLocation
     private func addGLoader(){
         
         let bundle = Bundle(for: type(of: self))
-        guard let image = UIImage(named: "Black G Icon", in: bundle, compatibleWith: nil) else {return}
+        let podBundle = Bundle(for: self.classForCoder)
+        
+        guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
 
         gIcon = UIImageView.init(image: image)
         gIcon?.contentMode = .scaleAspectFit
