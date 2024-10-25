@@ -1,0 +1,16 @@
+PODS:
+  - GSDKMerchant (0.1.0)
+
+DEPENDENCIES:
+  - GSDKMerchant (from `../`)
+
+EXTERNAL SOURCES:
+  GSDKMerchant:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GSDKMerchant: 4e04ffbda3d7ed385e60d885072471b10cba1a09
+
+PODFILE CHECKSUM: 38ead0a738617c783b18459ff380551011800f8f
+
+COCOAPODS: 1.15.2

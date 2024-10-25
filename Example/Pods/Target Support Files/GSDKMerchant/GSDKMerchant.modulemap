@@ -1,0 +1,6 @@
+framework module GSDKMerchant {
+  umbrella header "GSDKMerchant-umbrella.h"
+
+  export *
+  module * { export * }
+}

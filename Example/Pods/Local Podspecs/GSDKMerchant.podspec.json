@@ -1,0 +1,22 @@
+{
+  "name": "GSDKMerchant",
+  "version": "0.1.0",
+  "summary": "A short description of GSDKMerchant.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mfarhanchandgolootlo/GSDKMerchant",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mfarhanchandgolootlo": "muhammad.farhan@golootlo.pk"
+  },
+  "source": {
+    "git": "https://github.com/mfarhanchandgolootlo/GSDKMerchant.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "GSDKMerchant/Classes/**/*"
+}

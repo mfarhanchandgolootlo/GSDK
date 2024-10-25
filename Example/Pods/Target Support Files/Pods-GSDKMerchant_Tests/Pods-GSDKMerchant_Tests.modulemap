@@ -1,0 +1,6 @@
+framework module Pods_GSDKMerchant_Tests {
+  umbrella header "Pods-GSDKMerchant_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
