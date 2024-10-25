@@ -143,9 +143,9 @@ import CoreLocation
                 self.eventDelegate?.golootloWillMoveFromParent()
             }
         #else
-            if self.isMovingFromParentViewController{
-                self.eventDelegate?.golootloWillMoveFromParent()
-            }
+//            if self.isMovingFromParentViewController{
+//                self.eventDelegate?.golootloWillMoveFromParent()
+//            }
         #endif
     }
     
@@ -257,11 +257,11 @@ import CoreLocation
         errorView!.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(errorView!)
-        #if swift(>=5.0)
-            self.view.bringSubviewToFront(errorView!)
-        #else
-             self.view.bringSubview(toFront:errorView!)
-        #endif
+//        #if swift(>=5.0)
+//            self.view.bringSubviewToFront(errorView!)
+//        #else
+//             self.view.bringSubview(toFront:errorView!)
+//        #endif
         
         let centerY = errorView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -100)
         let centerX = errorView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
@@ -394,7 +394,7 @@ import CoreLocation
         gIcon?.translatesAutoresizingMaskIntoConstraints = false
         gIcon?.centerX(toView: self.view)
         gIcon?.centerY(toView: self.view)
-        self.view.bringSubview(toFront: gIcon!)
+//        self.view.bringSubview(toFront: gIcon!)
         gIcon?.width(70)
         gIcon?.height(50)
         

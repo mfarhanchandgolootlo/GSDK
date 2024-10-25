@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'A short description of GSDKMerchant.'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'mfarhanchandgolootlo' => 'muhammad.farhan@golootlo.pk' }
   s.source           = { :git => 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'Classes/**/*.swift'
