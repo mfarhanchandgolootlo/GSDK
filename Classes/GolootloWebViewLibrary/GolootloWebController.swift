@@ -147,6 +147,11 @@ import CoreLocation
 //                self.eventDelegate?.golootloWillMoveFromParent()
 //            }
         #endif
+        
+        if self.isMovingFromParent
+        {
+            self.eventDelegate?.golootloWillMoveFromParent()
+        }
     }
     
     @objc public func addNavigationBar(leftButtons:[UIBarButtonItem]? = nil,rightButtons:[UIBarButtonItem]? = nil){
@@ -262,6 +267,7 @@ import CoreLocation
 //        #else
 //             self.view.bringSubview(toFront:errorView!)
 //        #endif
+        self.view.bringSubviewToFront(errorView!)
         
         let centerY = errorView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -100)
         let centerX = errorView!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
@@ -394,7 +400,7 @@ import CoreLocation
         gIcon?.translatesAutoresizingMaskIntoConstraints = false
         gIcon?.centerX(toView: self.view)
         gIcon?.centerY(toView: self.view)
-//        self.view.bringSubview(toFront: gIcon!)
+        self.view.bringSubviewToFront(gIcon!)
         gIcon?.width(70)
         gIcon?.height(50)
         
@@ -478,15 +484,15 @@ extension GolootloWebController:LocationServiceDelegate{
                        
                        alertController.addAction(UIAlertAction.init(title: "Settings", style: .default, handler: { (action) in
                        
-//                           if let url = URL(string:UIApplicationOpenSettingsURLString) {
-//                               if UIApplication.shared.canOpenURL(url) {
-//                                   if #available(iOS 10.0, *) {
-//                                       UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                                   } else {
-//                                       UIApplication.shared.openURL(url)
-//                                   }
-//                               }
-//                           }
+                           if let url = URL(string:UIApplication.openSettingsURLString) {
+                               if UIApplication.shared.canOpenURL(url) {
+                                   if #available(iOS 10.0, *) {
+                                       UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                   } else {
+                                       UIApplication.shared.openURL(url)
+                                   }
+                               }
+                           }
                            
                        }))
                        
