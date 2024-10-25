@@ -403,12 +403,12 @@ import CoreLocation
         let bundle = Bundle(for: type(of: self))
         let podBundle = Bundle(for: self.classForCoder)
         
-        let array = PodAssetHelper.assets(inPod: "GSDKMerchant")
-        print(array)
-        //NSArray* array = [PodAsset assetsInPod:@"TestPod"];
-            
-//        let podBundle = Bundle(for: type(of: GSDKMerchant.self))
-        guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
+        guard let image  = SDKPodBundleHelper.image(named: "Black G Icon")else {
+            print("one")
+            return
+        }
+        // ponka
+//        guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
 
         gIcon = UIImageView.init(image: image)
         gIcon?.contentMode = .scaleAspectFit
@@ -1093,39 +1093,19 @@ extension UIEdgeInsets {
 }
 
 
-class PodAssetHelper {
+public class SDKPodBundleHelper {
     
-    static func assets(inPod podName: String) -> [String]? {
-        guard let bundle = self.bundleContains(podName: podName) else { return nil }
-        
-        let bundleRoot = bundle.bundlePath
-        let fileManager = FileManager.default
-        
-        do {
-            let paths = try fileManager.contentsOfDirectory(atPath: bundleRoot)
-            return paths
-        } catch {
-            print("Error accessing bundle contents: \(error)")
-            return nil
-        }
+    // Function to retrieve the bundle associated with the SDKPod
+    public static func podBundle() -> Bundle? {
+        // Locate the bundle containing the assets for this pod
+        return Bundle(for: SDKPodBundleHelper.self)
     }
     
-    static func bundleContains(podName: String) -> Bundle? {
-        // Search all bundles
-        for bundle in Bundle.allBundles {
-            if let bundlePath = bundle.path(forResource: podName, ofType: "xcassets") {
-                return bundle
-            }
-        }
+    // Function to load an image from the asset catalog within the pod
+    public static func image(named imageName: String) -> UIImage? {
+        guard let bundle = podBundle() else { return nil }
         
-        // Search all frameworks
-        for bundle in Bundle.allFrameworks {
-            if let bundlePath = bundle.path(forResource: podName, ofType: "xcassets") {
-                return bundle
-            }
-        }
-        
-        // Some pods may not use "resource_bundles"; check the pod's podspec if needed
-        return nil
+        // Load image using UIImage(named:in:compatibleWith:)
+        return UIImage(named: imageName, in: bundle, compatibleWith: nil)
     }
 }
