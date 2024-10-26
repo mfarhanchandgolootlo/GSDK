@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
         'GSDKMerchant' => ['Assests/**/*.{imageset}']
     }
    
-#   s.resources = 'Assests/**/*.{imageset}'
+   s.resources = 'Assests/**/*.{imageset}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
