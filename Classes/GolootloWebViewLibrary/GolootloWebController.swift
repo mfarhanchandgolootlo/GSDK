@@ -147,7 +147,11 @@ public enum CrossButtonAlignemnt
             self.podBundle = UIImage.fromPod(named: "Sad Face").1
         }
         
-        test()
+        if let myImage = ImageLoader.loadImage(named: "yourImageName") {
+            print("han")
+        } else {
+            print("Image not found")
+        }
         
         //self.view.bringSubviewToFront(self.loaderImageView!)
     }
@@ -1197,7 +1201,7 @@ extension UIImage {
 
 public func test() -> UIImage?
 {
-    guard let resourceBundleURL = Bundle.main.url(forResource: "GSDKMerchant", withExtension: "bundle"),
+    guard let resourceBundleURL = Bundle.main.url(forResource: "SDKPodResources", withExtension: "bundle"),
           let resourceBundle = Bundle(url: resourceBundleURL) else {
         print("Resource bundle not found.")
         return nil
@@ -1207,3 +1211,31 @@ public func test() -> UIImage?
 }
 
 
+
+
+public class ImageLoader {
+    public static func loadImage(named imageName: String) -> UIImage? {
+        // Ensure that the bundle is correctly fetched
+        let bundle = Bundle(for: self)
+        
+        // If your images are inside an assets folder, use this line
+        if let image = UIImage(named: imageName, in: bundle, compatibleWith: nil) {
+            return image
+        }
+        
+        // Alternative method if image not in assets folder
+        if let imageURL = bundle.url(forResource: imageName, withExtension: "pdf"),
+           let imageData = try? Data(contentsOf: imageURL) {
+            return UIImage(data: imageData)
+        }
+        
+        // Alternative method if image not in assets folder
+        if let imageURL = bundle.url(forResource: imageName, withExtension: "png"),
+           let imageData = try? Data(contentsOf: imageURL) {
+            return UIImage(data: imageData)
+        }
+        
+        // If image not found, return nil
+        return nil
+    }
+}
