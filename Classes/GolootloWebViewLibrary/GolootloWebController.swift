@@ -100,7 +100,9 @@ public enum CrossButtonAlignemnt
         self.baseUrl        = baseURL
         let encodedDataResult = getEncoded(plainData: dataObject, pemFileName: pemfile)
         
-        let webviewURL = (self.baseUrl ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
+        //let webviewURL = (self.baseUrl ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
+        
+        let webviewURL = (self.baseUrl ?? "") + "data=" + dataObject + "&appversion=" + appversion + "&client=ios"
         self.stringURL = webviewURL
         
         self.eventDelegate  = delegate
@@ -139,24 +141,10 @@ public enum CrossButtonAlignemnt
             setNavBarTitle()
         }
         
-        if let customImage = UIImage.fromPod(named: "Sad Face") {
+        if let customImage = UIImage.fromPod(named: "Sad Face").0 {
             // Use the image
             print("han")
-        }
-        
-        if let customImage = UIImage.fromPod(named: "Black G Icon") {
-            // Use the image
-            print("han")
-        }
-        
-        if let customImage = UIImage.fromPod(named: "Close Icon") {
-            // Use the image
-            print("han")
-        }
-        
-        if let customImage = UIImage.fromPod(named: "Camera Overlay") {
-            // Use the image
-            print("han")
+            self.podBundle = UIImage.fromPod(named: "Sad Face").1
         }
         
         //self.view.bringSubviewToFront(self.loaderImageView!)
@@ -1192,15 +1180,16 @@ extension UIImage {
     //        return UIImage(named: name, in: bundle, compatibleWith: nil)
     //    }
     
-    static func fromPod(named name: String) -> UIImage? {
+    static func fromPod(named name: String) -> (UIImage?, Bundle?) {
         // Loop through all bundles to find the correct one for the image
         for bundle in Bundle.allBundles + Bundle.allFrameworks {
             if let image = UIImage(named: name, in: bundle, compatibleWith: nil) {
-                return image
+                
+                return (image, bundle)
             }
         }
         print("Image not found in any available bundle.")
-        return nil
+        return (nil, nil)
     }
 }
 
