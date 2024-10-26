@@ -6,9 +6,20 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
+# How to use this file
+# 1) git add .
+# 2) git commit -m “”
+# 3) git tag 0.0.5
+# 4) git push -—tags
+# 5) git push origin main
+# 6) pod lib lint GSDKMerchant.podspec —-verbose -> Validation check purpose in detail
+# 7) pod trunk push GSDKMerchant.podspec —-verbose
+# 8) pod trunk push GSDKMerchant.podspec --verbose --allow-warnings
+# 9) pod trunk push GSDKMerchant.podspec --allow-warnings
+
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
-  s.version          = '0.0.27'
+  s.version          = '0.0.28'
   s.summary          = 'A short description of GSDKMerchant.'
 
 # This description is used to generate tags and improve search results.
@@ -24,9 +35,9 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/mfarhanchandgolootlo/GSDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'mfarhanchandgolootlo' => 'muhammad.farhan@golootlo.pk' }
+  s.author           = { 'Muhamamd Farhan ' => 'farhan.chnd88@gmail.com' , 'muhammad.farhan@golootlo.pk' }
   s.source           = { :git => 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+   s.social_media_url = 'https://www.linkedin.com/in/muhammedfarhan/'
   s.swift_version = '5.0'
   s.ios.deployment_target = '12.0'
 

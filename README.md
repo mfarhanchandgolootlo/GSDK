@@ -22,7 +22,7 @@ pod 'GSDKMerchant'
 
 ## Author
 
-mfarhanchandgolootlo, muhammad.farhan@golootlo.pk
+Muhammad Farhan, muhammad.farhan@golootlo.pk, farhan.chnd88@gmail.com
 
 ## License
 
