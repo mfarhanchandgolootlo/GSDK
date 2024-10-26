@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 import CoreLocation
-//import SwiftyRSA
+import SwiftyRSA
 import GSDKMerchant
 
 public enum CrossButtonAlignemnt
@@ -100,9 +100,9 @@ public enum CrossButtonAlignemnt
         self.baseUrl        = baseURL
         let encodedDataResult = getEncoded(plainData: dataObject, pemFileName: pemfile)
         
-        //let webviewURL = (self.baseUrl ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
+        let webviewURL = (self.baseUrl ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
         
-        let webviewURL = (self.baseUrl ?? "") + "data=" + dataObject + "&appversion=" + appversion + "&client=ios"
+//        let webviewURL = (self.baseUrl ?? "") + "data=" + dataObject + "&appversion=" + appversion + "&client=ios"
         self.stringURL = webviewURL
         
         self.eventDelegate  = delegate
@@ -147,17 +147,17 @@ public enum CrossButtonAlignemnt
             self.podBundle = UIImage.fromPod(named: "Sad Face").1
         }
         
-        if let myImage = ImageLoader.loadImage(named: "Sad Face") {
-            print("han")
-        } else {
-            print("Image not found")
-        }
-        
-        if let myImage = ImageLoader.loadImage(named: "Close Icon") {
-            print("han")
-        } else {
-            print("Image not found")
-        }
+//        if let myImage = ImageLoader.loadImage(named: "Sad Face") {
+//            print("han")
+//        } else {
+//            print("Image not found")
+//        }
+//        
+//        if let myImage = ImageLoader.loadImage(named: "Close Icon") {
+//            print("han")
+//        } else {
+//            print("Image not found")
+//        }
         
         //self.view.bringSubviewToFront(self.loaderImageView!)
     }
@@ -1156,24 +1156,24 @@ extension UIEdgeInsets {
 extension GolootloWebController
 {
     public func getEncoded(plainData:String, pemFileName: String)->String?{
-//        do{
-//            //let publicKey = try PublicKey.init(pemNamed:"live-public-key" , in: Bundle.main)
-//            let publicKey = try PublicKey.init(pemNamed:pemFileName , in: Bundle.main)
-//            let clear = try ClearMessage(string: plainData, using: .utf8)
-//            let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
-//            
-//            // Then you can use:
-//            //    let data = encrypted.data
-//            let base64String = encrypted.base64String
-//            
-//            let allowedCharacterSet = CharacterSet.init(charactersIn: "!*'();:@&=+$,/?#[]").inverted
-//            let encodedData = base64String.addingPercentEncoding(withAllowedCharacters:allowedCharacterSet)!
-//            
-//            return encodedData
-//            
-//        }catch{
-//            print(error)
-//        }
+        do{
+            //let publicKey = try PublicKey.init(pemNamed:"live-public-key" , in: Bundle.main)
+            let publicKey = try PublicKey.init(pemNamed:pemFileName , in: Bundle.main)
+            let clear = try ClearMessage(string: plainData, using: .utf8)
+            let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
+            
+            // Then you can use:
+            //    let data = encrypted.data
+            let base64String = encrypted.base64String
+            
+            let allowedCharacterSet = CharacterSet.init(charactersIn: "!*'();:@&=+$,/?#[]").inverted
+            let encodedData = base64String.addingPercentEncoding(withAllowedCharacters:allowedCharacterSet)!
+            
+            return encodedData
+            
+        }catch{
+            print(error)
+        }
         
         return nil
     }

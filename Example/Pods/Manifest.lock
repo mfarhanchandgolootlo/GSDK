@@ -1,16 +1,24 @@
 PODS:
-  - GSDKMerchant (0.0.18)
+  - GSDKMerchant (0.0.26):
+    - SwiftyRSA/ObjC
+  - SwiftyRSA/ObjC (1.5.0)
 
 DEPENDENCIES:
   - GSDKMerchant (from `../`)
+  - SwiftyRSA/ObjC
+
+SPEC REPOS:
+  trunk:
+    - SwiftyRSA
 
 EXTERNAL SOURCES:
   GSDKMerchant:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GSDKMerchant: 100427cb047097d07820f5d6cc7c9a0f59645fbd
+  GSDKMerchant: 32c2cb3a3ae166e78278c1856c244008684a1785
+  SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: 5222e475e39f61ebb6a99be380dcd4dc450f0cf3
+PODFILE CHECKSUM: 204bd51d3367fe943a81636b62898ff9f8b7faf0
 
 COCOAPODS: 1.15.2
