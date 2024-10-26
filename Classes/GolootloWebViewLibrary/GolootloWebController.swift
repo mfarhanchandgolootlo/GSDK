@@ -147,7 +147,13 @@ public enum CrossButtonAlignemnt
             self.podBundle = UIImage.fromPod(named: "Sad Face").1
         }
         
-        if let myImage = ImageLoader.loadImage(named: "yourImageName") {
+        if let myImage = ImageLoader.loadImage(named: "Sad Face") {
+            print("han")
+        } else {
+            print("Image not found")
+        }
+        
+        if let myImage = ImageLoader.loadImage(named: "Close Icon") {
             print("han")
         } else {
             print("Image not found")
