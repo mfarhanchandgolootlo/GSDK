@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'GSDKMerchant_Example' do
   pod 'GSDKMerchant', :path => '../'
-  pod 'SwiftyRSA/ObjC'
+#  pod 'SwiftyRSA/ObjC'
 
   target 'GSDKMerchant_Tests' do
     inherit! :search_paths
