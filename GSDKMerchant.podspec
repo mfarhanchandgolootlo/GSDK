@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
-  s.version          = '0.0.15'
+  s.version          = '0.0.16'
   s.summary          = 'A short description of GSDKMerchant.'
 
 # This description is used to generate tags and improve search results.
@@ -34,13 +34,14 @@ TODO: Add long description of the pod here.
   
   s.script_phase = { :name => 'Disable Code Signing', :script => 'export CODE_SIGNING_ALLOWED=NO', :execution_position => :before_compile }
 
-#    s.resource_bundles = {
-#        'GSDKMerchant' => ['Assests/**/*.{imageset}']
-#    }
+    s.resource_bundles = {
+        'GSDKMerchant' => ['Assests/**/*.{imageset}']
+    }
    
-   s.resources = 'Assests/**/*.{imageset}'
+#   s.resources = 'Assests/**/*.{imageset}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SwiftyRSA/ObjC'
 end

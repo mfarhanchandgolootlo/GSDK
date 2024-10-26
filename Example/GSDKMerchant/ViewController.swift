@@ -22,7 +22,8 @@ class ViewController: UIViewController {
         
         if let url = URL(string: urlString)
         {
-            let merchant = GolootloWebController(webURL: url, delegate: self)
+            let merchant = GolootloWebController(webURL: url, delegate: self, hideCross: false, crossAlignemtn: 0)
+//            merchant.modalPresentationStyle = .fullScreen
             self.present(merchant, animated: true) {
                 print("asdfasdfsafd")
             }

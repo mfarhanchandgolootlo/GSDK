@@ -9,6 +9,14 @@
 import UIKit
 import WebKit
 import CoreLocation
+import SwiftyRSA
+
+public enum CrossButtonAlignemnt
+{
+    case left
+    case right
+    case none
+}
 
 @objc public class GolootloWebController: UIViewController, WKNavigationDelegate,CLLocationManagerDelegate {
 
@@ -18,6 +26,7 @@ import CoreLocation
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font:UIFont.systemFont(ofSize: 17)])
     
+    var alignemtn:CrossButtonAlignemnt? = .left
    
     @objc public var webView: WKWebView?{
         
@@ -27,11 +36,11 @@ import CoreLocation
         }
     }
     
-    public var closeButton: UIButton?
+    private var closeButton: UIButton?
     private var bgImageView: UIImageView?
     private var gIcon:UIImageView?
     //internal var activityIndicator: UIActivityIndicatorView  = UIActivityIndicatorView.init(style: .gray)
-    
+    public var isHideCrossButton = false
     
     internal var stringURL:String? {
         
@@ -69,13 +78,16 @@ import CoreLocation
     let allowedSpacing = (UIScreen.main.bounds.height * 0.35)
     
     @objc
-    public init(webURL: URL, delegate: GolootloEventDelegate) {
+    public init(webURL: URL, delegate: GolootloEventDelegate, hideCross: Bool, crossAlignemtn: Int) {
         super.init(nibName: nil, bundle: nil)
         
         self.baseUrl        = webURL.host
         self.stringURL      = webURL.absoluteString + "&client=ios"
         self.eventDelegate  = delegate
+        self.isHideCrossButton = hideCross
+        self.alignemtn = (crossAlignemtn == 0) ? .left : .right
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -125,7 +137,9 @@ import CoreLocation
         super.viewDidAppear(animated)
         self.eventDelegate?.golootloViewDidAppear(animated)
         if self.presentingViewController != nil{
-            addCloseButton()
+            if self.isHideCrossButton == false{
+                addCloseButton()
+            }
         }
     }
    
@@ -170,10 +184,8 @@ import CoreLocation
         type(of: self)
         
         let bundle = Bundle(for: type(of: self))
-        
-        let podBundle = Bundle(for: self.classForCoder)
-        
-        let image = UIImage(named: "Close Icon", in: podBundle, compatibleWith: nil)
+                
+        let image = UIImage(named: "Close Icon", in: bundle, compatibleWith: nil)
         closeButton!.setImage(image, for: .normal)
         closeButton!.tintColor = .white
         closeButton?.layer.cornerRadius = 22
@@ -283,10 +295,10 @@ import CoreLocation
         
         let bundle              = Bundle(for: type(of: self))
         
-        let podBundle = Bundle(for: self.classForCoder)
+//        let podBundle = Bundle(for: self.classForCoder)
 //        let smpleImg = UIImageView.init(image:UIImage(named: "Sad Face", in: podBundle, compatibleWith: nil)!)
         
-        let imageView           = UIImageView.init(image:UIImage(named: "Sad Face", in: podBundle, compatibleWith: nil)!)
+        let imageView           = UIImageView.init(image:UIImage(named: "Sad Face", in: bundle, compatibleWith: nil)!)
         imageView.contentMode   = .scaleAspectFit
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -357,16 +369,32 @@ import CoreLocation
         
         let btnHeight = closeButton!.heightAnchor.constraint(equalToConstant: 44)
         let btnWidth  = closeButton!.widthAnchor.constraint(equalToConstant: 44)
-        if #available(iOS 11.0, *) {
-            let btnTop =   closeButton!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24)
-            let leading = closeButton!.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: 24 )
-            
-            NSLayoutConstraint.activate([btnTop, btnHeight, btnWidth, leading])
-        } else {
-            let btnTop = closeButton!.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 24)
-            let leading = closeButton!.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,constant: 24)
-            
-            NSLayoutConstraint.activate([btnTop, btnHeight, btnWidth, leading])
+        if self.alignemtn == .left
+        {
+            if #available(iOS 11.0, *) {
+                let btnTop =   closeButton!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24)
+                let leading = closeButton!.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 24 )
+                
+                NSLayoutConstraint.activate([btnTop, btnHeight, btnWidth, leading])
+            } else {
+                let btnTop = closeButton!.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 24)
+                let leading = closeButton!.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 24)
+                
+                NSLayoutConstraint.activate([btnTop, btnHeight, btnWidth, leading])
+            }
+        }
+        else{
+            if #available(iOS 11.0, *) {
+                let btnTop =   closeButton!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24)
+                let leading = closeButton!.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -24 )
+                
+                NSLayoutConstraint.activate([btnTop, btnHeight, btnWidth, leading])
+            } else {
+                let btnTop = closeButton!.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 24)
+                let leading = closeButton!.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,constant: 24)
+                
+                NSLayoutConstraint.activate([btnTop, btnHeight, btnWidth, leading])
+            }
         }
     }
     
@@ -375,7 +403,7 @@ import CoreLocation
         let bundle = Bundle(for: type(of: self))
         let podBundle = Bundle(for: self.classForCoder)
         
-        guard let image = UIImage(named: "Golootlo Webview Background", in: podBundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Golootlo Webview Background", in: bundle, compatibleWith: nil) else {return}
         
         bgImageView = UIImageView.init(image: image)
         bgImageView?.contentMode = .scaleAspectFill
@@ -403,12 +431,12 @@ import CoreLocation
         let bundle = Bundle(for: type(of: self))
         let podBundle = Bundle(for: self.classForCoder)
         
-        guard let image  = SDKPodBundleHelper.image(named: "Black G Icon")else {
-            print("one")
-            return
-        }
+//        guard let image  = SDKPodBundleHelper.image(named: "Black G Icon")else {
+//            print("one")
+//            return
+//        }
         // ponka
-//        guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Black G Icon", in: bundle, compatibleWith: nil) else {return}
 
         gIcon = UIImageView.init(image: image)
         gIcon?.contentMode = .scaleAspectFit
@@ -1109,3 +1137,33 @@ public class SDKPodBundleHelper {
         return UIImage(named: imageName, in: bundle, compatibleWith: nil)
     }
 }
+
+extension GolootloWebController
+{
+    func getEncoded(plainData:String, pemFileName: String)->String?{
+        
+        do{
+            
+            //let publicKey = try PublicKey.init(pemNamed:"live-public-key" , in: Bundle.main)
+            let publicKey = try PublicKey.init(pemNamed:pemFileName , in: Bundle.main)
+            let clear = try ClearMessage(string: plainData, using: .utf8)
+            let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
+            
+            // Then you can use:
+            //    let data = encrypted.data
+            let base64String = encrypted.base64String
+            
+            let allowedCharacterSet = CharacterSet.init(charactersIn: "!*'();:@&=+$,/?#[]").inverted
+            let encodedData = base64String.addingPercentEncoding(withAllowedCharacters:allowedCharacterSet)!
+            
+            return encodedData
+            
+        }catch{
+            print(error)
+        }
+        
+        return nil
+    }
+}
+
+
