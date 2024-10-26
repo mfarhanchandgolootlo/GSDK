@@ -17,9 +17,11 @@
 # 8) pod trunk push GSDKMerchant.podspec --verbose --allow-warnings
 # 9) pod trunk push GSDKMerchant.podspec --allow-warnings
 
+#https://medium.com/@ankushppie/creating-custom-pods-in-swift-for-ios-a-step-by-step-guide-e16105579b26
+
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
-  s.version          = '0.0.29'
+  s.version          = '0.0.30'  # '0.0.30' -> use 0.0.# (for development) and for clients use 1.0.#
   s.summary          = 'A short description of GSDKMerchant.'
 
 # This description is used to generate tags and improve search results.
@@ -35,7 +37,9 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/mfarhanchandgolootlo/GSDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Muhamamd Farhan ' => 'farhan.chnd88@gmail.com' , 'muhammad.farhan@golootlo.pk' }
+  
+  s.author = { 'muhammad.farhan@golootlo.pk' => 'Muhammad Farhan', 'farhan.chnd88@gmail.com' => 'Muhamamd Farhan', 'abdul.moiz@golootlo.pk' => 'Abdul Moiz' }
+
   s.source           = { :git => 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => s.version.to_s }
    s.social_media_url = 'https://www.linkedin.com/in/muhammedfarhan/'
   s.swift_version = '5.0'
