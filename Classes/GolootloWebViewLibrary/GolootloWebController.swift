@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import CoreLocation
 //import SwiftyRSA
+import GSDKMerchant
 
 public enum CrossButtonAlignemnt
 {
@@ -36,7 +37,7 @@ public enum CrossButtonAlignemnt
         }
     }
     
-    let podBundle: Bundle? = Bundle.init(for: GolootloWebController.self)
+    var podBundle: Bundle? = nil
     
     private var closeButton: UIButton?
     private var bgImageView: UIImageView?
@@ -138,6 +139,26 @@ public enum CrossButtonAlignemnt
             setNavBarTitle()
         }
         
+        if let customImage = UIImage.fromPod(named: "Sad Face") {
+            // Use the image
+            print("han")
+        }
+        
+        if let customImage = UIImage.fromPod(named: "Black G Icon") {
+            // Use the image
+            print("han")
+        }
+        
+        if let customImage = UIImage.fromPod(named: "Close Icon") {
+            // Use the image
+            print("han")
+        }
+        
+        if let customImage = UIImage.fromPod(named: "Camera Overlay") {
+            // Use the image
+            print("han")
+        }
+        
         //self.view.bringSubviewToFront(self.loaderImageView!)
     }
     
@@ -204,7 +225,7 @@ public enum CrossButtonAlignemnt
         
 //        let bundle = Bundle(for: type(of: self))
                 
-        let image = UIImage(named: "Close Icon", in: podBundle, compatibleWith: nil)
+        let image = UIImage(named: "Close Icon", in: self.podBundle, compatibleWith: nil)
         closeButton!.setImage(image, for: .normal)
         closeButton!.tintColor = .white
         closeButton?.layer.cornerRadius = 22
@@ -314,7 +335,7 @@ public enum CrossButtonAlignemnt
         
 //        let bundle              = Bundle(for: type(of: self))
                 
-        guard let image = UIImage(named: "Golootlo Webview Background", in: podBundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Sad Face", in: self.podBundle, compatibleWith: nil) else {return}
         
         let imageView           = UIImageView.init(image:image)
         imageView.contentMode   = .scaleAspectFit
@@ -420,7 +441,7 @@ public enum CrossButtonAlignemnt
         
 //        let bundle = Bundle(for: type(of: self))
         
-        guard let image = UIImage(named: "Golootlo Webview Background", in: podBundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Golootlo Webview Background", in: self.podBundle, compatibleWith: nil) else {return}
         
         bgImageView = UIImageView.init(image: image)
         bgImageView?.contentMode = .scaleAspectFill
@@ -448,7 +469,7 @@ public enum CrossButtonAlignemnt
 //        let bundle = Bundle(for: type(of: self))
 
         // ponka
-        guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Black G Icon", in: self.podBundle, compatibleWith: nil) else {return}
 
         gIcon = UIImageView.init(image: image)
         gIcon?.contentMode = .scaleAspectFit
@@ -1132,24 +1153,6 @@ extension UIEdgeInsets {
     
 }
 
-
-public class SDKPodBundleHelper {
-    
-    // Function to retrieve the bundle associated with the SDKPod
-    public static func podBundle() -> Bundle? {
-        // Locate the bundle containing the assets for this pod
-        return Bundle(for: SDKPodBundleHelper.self)
-    }
-    
-    // Function to load an image from the asset catalog within the pod
-    public static func image(named imageName: String) -> UIImage? {
-        guard let bundle = podBundle() else { return nil }
-        
-        // Load image using UIImage(named:in:compatibleWith:)
-        return UIImage(named: imageName, in: bundle, compatibleWith: nil)
-    }
-}
-
 extension GolootloWebController
 {
     public func getEncoded(plainData:String, pemFileName: String)->String?{
@@ -1172,6 +1175,31 @@ extension GolootloWebController
 //            print(error)
 //        }
         
+        return nil
+    }
+}
+
+
+
+extension UIImage {
+    //    static func fromPod(named name: String) -> UIImage? {
+    //
+    //        guard let bundle = Bundle(identifier: "org.cocoapods.GSDKMerchant") else {
+    //            print("Bundle not found.")
+    //            return nil
+    //        }
+    //
+    //        return UIImage(named: name, in: bundle, compatibleWith: nil)
+    //    }
+    
+    static func fromPod(named name: String) -> UIImage? {
+        // Loop through all bundles to find the correct one for the image
+        for bundle in Bundle.allBundles + Bundle.allFrameworks {
+            if let image = UIImage(named: name, in: bundle, compatibleWith: nil) {
+                return image
+            }
+        }
+        print("Image not found in any available bundle.")
         return nil
     }
 }
