@@ -147,6 +147,8 @@ public enum CrossButtonAlignemnt
             self.podBundle = UIImage.fromPod(named: "Sad Face").1
         }
         
+        test()
+        
         //self.view.bringSubviewToFront(self.loaderImageView!)
     }
     
@@ -1191,6 +1193,17 @@ extension UIImage {
         print("Image not found in any available bundle.")
         return (nil, nil)
     }
+}
+
+public func test() -> UIImage?
+{
+    guard let resourceBundleURL = Bundle.main.url(forResource: "GSDKMerchant", withExtension: "bundle"),
+          let resourceBundle = Bundle(url: resourceBundleURL) else {
+        print("Resource bundle not found.")
+        return nil
+    }
+    let img = UIImage(named: "Sad Face", in: resourceBundle, compatibleWith: nil)
+    return img
 }
 
 
