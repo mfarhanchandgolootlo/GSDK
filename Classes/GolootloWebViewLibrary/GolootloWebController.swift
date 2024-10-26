@@ -36,6 +36,8 @@ public enum CrossButtonAlignemnt
         }
     }
     
+    let bundle: Bundle? = Bundle.init(for: GolootloWebController.self)
+    
     private var closeButton: UIButton?
     private var bgImageView: UIImageView?
     private var gIcon:UIImageView?
@@ -293,12 +295,14 @@ public enum CrossButtonAlignemnt
         
         NSLayoutConstraint.activate([centerY, centerX, width, height])
         
-        let bundle              = Bundle(for: type(of: self))
+//        let bundle              = Bundle(for: type(of: self))
         
 //        let podBundle = Bundle(for: self.classForCoder)
 //        let smpleImg = UIImageView.init(image:UIImage(named: "Sad Face", in: podBundle, compatibleWith: nil)!)
         
-        let imageView           = UIImageView.init(image:UIImage(named: "Sad Face", in: bundle, compatibleWith: nil)!)
+        guard let image = UIImage(named: "Golootlo Webview Background", in: bundle, compatibleWith: nil) else {return}
+        
+        let imageView           = UIImageView.init(image:image)
         imageView.contentMode   = .scaleAspectFit
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -400,8 +404,7 @@ public enum CrossButtonAlignemnt
     
     private func setupBGImage(){
         
-        let bundle = Bundle(for: type(of: self))
-        let podBundle = Bundle(for: self.classForCoder)
+//        let bundle = Bundle(for: type(of: self))
         
         guard let image = UIImage(named: "Golootlo Webview Background", in: bundle, compatibleWith: nil) else {return}
         
@@ -428,13 +431,8 @@ public enum CrossButtonAlignemnt
     
     private func addGLoader(){
         
-        let bundle = Bundle(for: type(of: self))
-        let podBundle = Bundle(for: self.classForCoder)
-        
-//        guard let image  = SDKPodBundleHelper.image(named: "Black G Icon")else {
-//            print("one")
-//            return
-//        }
+//        let bundle = Bundle(for: type(of: self))
+
         // ponka
         guard let image = UIImage(named: "Black G Icon", in: bundle, compatibleWith: nil) else {return}
 
