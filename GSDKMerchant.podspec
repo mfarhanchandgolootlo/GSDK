@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
-  s.version          = '0.0.18'
+  s.version          = '0.0.19'
   s.summary          = 'A short description of GSDKMerchant.'
 
 # This description is used to generate tags and improve search results.
