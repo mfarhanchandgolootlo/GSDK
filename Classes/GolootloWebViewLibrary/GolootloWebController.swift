@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 import CoreLocation
-import SwiftyRSA
+//import SwiftyRSA
 
 public enum CrossButtonAlignemnt
 {
@@ -36,7 +36,7 @@ public enum CrossButtonAlignemnt
         }
     }
     
-    let bundle: Bundle? = Bundle.init(for: GolootloWebController.self)
+    let podBundle: Bundle? = Bundle.init(for: GolootloWebController.self)
     
     private var closeButton: UIButton?
     private var bgImageView: UIImageView?
@@ -79,17 +79,34 @@ public enum CrossButtonAlignemnt
     //@IBOutlet weak var errorView: UIView!
     let allowedSpacing = (UIScreen.main.bounds.height * 0.35)
     
+//  MARK: - Comment Old Code
+//    @objc
+//    public init(webURL: URL, delegate: GolootloEventDelegate, hideCross: Bool, crossAlignemtn: Int) {
+//        super.init(nibName: nil, bundle: nil)
+//        
+//        self.baseUrl        = webURL.host
+//        self.stringURL      = webURL.absoluteString + "&client=ios"
+//        self.eventDelegate  = delegate
+//        self.isHideCrossButton = hideCross
+//        self.alignemtn = (crossAlignemtn == 0) ? .left : .right
+//    }
+//  MARK: - Comment Old Code
+    
     @objc
-    public init(webURL: URL, delegate: GolootloEventDelegate, hideCross: Bool, crossAlignemtn: Int) {
+    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String, appversion: String, hideCross: Bool, crossAlignemtn: Int, pemfile: String)
+    {
         super.init(nibName: nil, bundle: nil)
+        self.baseUrl        = baseURL
+        let encodedDataResult = getEncoded(plainData: dataObject, pemFileName: pemfile)
         
-        self.baseUrl        = webURL.host
-        self.stringURL      = webURL.absoluteString + "&client=ios"
+        let webviewURL = (self.baseUrl ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
+        self.stringURL = webviewURL
+        
         self.eventDelegate  = delegate
+        
         self.isHideCrossButton = hideCross
         self.alignemtn = (crossAlignemtn == 0) ? .left : .right
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -185,9 +202,9 @@ public enum CrossButtonAlignemnt
         closeButton = UIButton.init()
         type(of: self)
         
-        let bundle = Bundle(for: type(of: self))
+//        let bundle = Bundle(for: type(of: self))
                 
-        let image = UIImage(named: "Close Icon", in: bundle, compatibleWith: nil)
+        let image = UIImage(named: "Close Icon", in: podBundle, compatibleWith: nil)
         closeButton!.setImage(image, for: .normal)
         closeButton!.tintColor = .white
         closeButton?.layer.cornerRadius = 22
@@ -296,11 +313,8 @@ public enum CrossButtonAlignemnt
         NSLayoutConstraint.activate([centerY, centerX, width, height])
         
 //        let bundle              = Bundle(for: type(of: self))
-        
-//        let podBundle = Bundle(for: self.classForCoder)
-//        let smpleImg = UIImageView.init(image:UIImage(named: "Sad Face", in: podBundle, compatibleWith: nil)!)
-        
-        guard let image = UIImage(named: "Golootlo Webview Background", in: bundle, compatibleWith: nil) else {return}
+                
+        guard let image = UIImage(named: "Golootlo Webview Background", in: podBundle, compatibleWith: nil) else {return}
         
         let imageView           = UIImageView.init(image:image)
         imageView.contentMode   = .scaleAspectFit
@@ -406,7 +420,7 @@ public enum CrossButtonAlignemnt
         
 //        let bundle = Bundle(for: type(of: self))
         
-        guard let image = UIImage(named: "Golootlo Webview Background", in: bundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Golootlo Webview Background", in: podBundle, compatibleWith: nil) else {return}
         
         bgImageView = UIImageView.init(image: image)
         bgImageView?.contentMode = .scaleAspectFill
@@ -434,7 +448,7 @@ public enum CrossButtonAlignemnt
 //        let bundle = Bundle(for: type(of: self))
 
         // ponka
-        guard let image = UIImage(named: "Black G Icon", in: bundle, compatibleWith: nil) else {return}
+        guard let image = UIImage(named: "Black G Icon", in: podBundle, compatibleWith: nil) else {return}
 
         gIcon = UIImageView.init(image: image)
         gIcon?.contentMode = .scaleAspectFit
@@ -1139,24 +1153,24 @@ public class SDKPodBundleHelper {
 extension GolootloWebController
 {
     public func getEncoded(plainData:String, pemFileName: String)->String?{
-        do{
-            //let publicKey = try PublicKey.init(pemNamed:"live-public-key" , in: Bundle.main)
-            let publicKey = try PublicKey.init(pemNamed:pemFileName , in: Bundle.main)
-            let clear = try ClearMessage(string: plainData, using: .utf8)
-            let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
-            
-            // Then you can use:
-            //    let data = encrypted.data
-            let base64String = encrypted.base64String
-            
-            let allowedCharacterSet = CharacterSet.init(charactersIn: "!*'();:@&=+$,/?#[]").inverted
-            let encodedData = base64String.addingPercentEncoding(withAllowedCharacters:allowedCharacterSet)!
-            
-            return encodedData
-            
-        }catch{
-            print(error)
-        }
+//        do{
+//            //let publicKey = try PublicKey.init(pemNamed:"live-public-key" , in: Bundle.main)
+//            let publicKey = try PublicKey.init(pemNamed:pemFileName , in: Bundle.main)
+//            let clear = try ClearMessage(string: plainData, using: .utf8)
+//            let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
+//            
+//            // Then you can use:
+//            //    let data = encrypted.data
+//            let base64String = encrypted.base64String
+//            
+//            let allowedCharacterSet = CharacterSet.init(charactersIn: "!*'();:@&=+$,/?#[]").inverted
+//            let encodedData = base64String.addingPercentEncoding(withAllowedCharacters:allowedCharacterSet)!
+//            
+//            return encodedData
+//            
+//        }catch{
+//            print(error)
+//        }
         
         return nil
     }
