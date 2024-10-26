@@ -80,6 +80,7 @@ public enum CrossButtonAlignemnt
     //@IBOutlet weak var errorView: UIView!
     let allowedSpacing = (UIScreen.main.bounds.height * 0.35)
     
+    
 //  MARK: - Comment Old Code
 //    @objc
 //    public init(webURL: URL, delegate: GolootloEventDelegate, hideCross: Bool, crossAlignemtn: Int) {
