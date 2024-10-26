@@ -1140,10 +1140,8 @@ public class SDKPodBundleHelper {
 
 extension GolootloWebController
 {
-    func getEncoded(plainData:String, pemFileName: String)->String?{
-        
+    public func getEncoded(plainData:String, pemFileName: String)->String?{
         do{
-            
             //let publicKey = try PublicKey.init(pemNamed:"live-public-key" , in: Bundle.main)
             let publicKey = try PublicKey.init(pemNamed:pemFileName , in: Bundle.main)
             let clear = try ClearMessage(string: plainData, using: .utf8)
