@@ -1,5 +1,5 @@
 PODS:
-  - GSDKMerchant (0.0.26):
+  - GSDKMerchant (0.0.30):
     - SwiftyRSA/ObjC
   - SwiftyRSA/ObjC (1.5.0)
 
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GSDKMerchant: 32c2cb3a3ae166e78278c1856c244008684a1785
+  GSDKMerchant: eeb0c12b2668a58c6a107ca76c9f7bdc65e9cb61
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
 PODFILE CHECKSUM: 204bd51d3367fe943a81636b62898ff9f8b7faf0

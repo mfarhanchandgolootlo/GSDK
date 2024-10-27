@@ -1,6 +1,6 @@
 {
   "name": "GSDKMerchant",
-  "version": "0.0.26",
+  "version": "0.0.30",
   "summary": "A short description of GSDKMerchant.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/mfarhanchandgolootlo/GSDK",
@@ -9,12 +9,15 @@
     "file": "LICENSE"
   },
   "authors": {
-    "mfarhanchandgolootlo": "muhammad.farhan@golootlo.pk"
+    "muhammad.farhan@golootlo.pk": "Muhammad Farhan",
+    "farhan.chnd88@gmail.com": "Muhamamd Farhan",
+    "abdul.moiz@golootlo.pk": "Abdul Moiz"
   },
   "source": {
     "git": "https://github.com/mfarhanchandgolootlo/GSDK.git",
-    "tag": "0.0.26"
+    "tag": "0.0.30"
   },
+  "social_media_url": "https://www.linkedin.com/in/muhammedfarhan/",
   "swift_versions": "5.0",
   "platforms": {
     "ios": "12.0"

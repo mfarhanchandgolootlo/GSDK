@@ -84,31 +84,31 @@
 		02396596E5F38C0CA603B8DF9D46A7E3 /* SwiftyRSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyRSA.debug.xcconfig; sourceTree = "<group>"; };
 		027279E8B05945F7373858E735777D95 /* GSDKMerchant-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GSDKMerchant-dummy.m"; sourceTree = "<group>"; };
 		05819B667D9FB25F04E01FEF09AB4558 /* EncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncryptedMessage.swift; path = Source/EncryptedMessage.swift; sourceTree = "<group>"; };
-		091BD52E93B4BA4D21E96A31723F25CD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		091BD52E93B4BA4D21E96A31723F25CD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0ADE220F77D46CAD6DE9ECB44FBBBAAB /* SwiftyRSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyRSA.release.xcconfig; sourceTree = "<group>"; };
-		0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyRSA; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E41089B8CE809C4C56FDDF9C93569F8 /* URL+QueryParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+QueryParams.swift"; sourceTree = "<group>"; };
 		1BABAF51623EC5C971A3D9BEA251EC11 /* GSDKMerchant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GSDKMerchant.debug.xcconfig; sourceTree = "<group>"; };
 		1BC72A9AB216B29298757C2537AC45AA /* SwiftyRSA+ObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyRSA+ObjC.swift"; path = "Source/SwiftyRSA+ObjC.swift"; sourceTree = "<group>"; };
-		1CA1840BAA4A123DB423C7D375A0CE2F /* GSDKMerchant.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GSDKMerchant.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1CA1840BAA4A123DB423C7D375A0CE2F /* GSDKMerchant.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GSDKMerchant.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		21A8AF5C97D1DC825D2CD300035EB109 /* GolootloEventProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GolootloEventProtocol.swift; sourceTree = "<group>"; };
 		27D08C0BE2819933F1C241E528AA4E8B /* Pods-GSDKMerchant_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GSDKMerchant_Tests.modulemap"; sourceTree = "<group>"; };
 		2B74469064CF045E2006C10D97BDDEA2 /* SwiftyRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyRSA.swift; path = Source/SwiftyRSA.swift; sourceTree = "<group>"; };
 		2DCC02E97CAA38956203E915036B7A1E /* Pods-GSDKMerchant_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GSDKMerchant_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		313240C16B474B2C99C3581CE040B100 /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SHA.h"; path = "Source/NSData+SHA.h"; sourceTree = "<group>"; };
-		354A03192C435534401AF152F1F05630 /* Pods-GSDKMerchant_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GSDKMerchant_Example"; path = Pods_GSDKMerchant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		354A03192C435534401AF152F1F05630 /* Pods_GSDKMerchant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDKMerchant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		369B5C919EBB142416860AC9D4C04CFA /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Source/Message.swift; sourceTree = "<group>"; };
 		387C217655F8BC534B8AE6F70F024DE0 /* SwiftyRSA-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyRSA-prefix.pch"; sourceTree = "<group>"; };
 		399F0628FF4409B7AF4FCB4A69638C37 /* Pods-GSDKMerchant_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GSDKMerchant_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3D5F472E6F5623F9FEF09E9654D90AA7 /* SwiftyRSA-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyRSA-dummy.m"; sourceTree = "<group>"; };
 		3DCCC33608AB348DC73706936777A17C /* GSDKMerchant-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GSDKMerchant-prefix.pch"; sourceTree = "<group>"; };
 		3F9C944171B4A5C28E2E048FB5F083C4 /* Pods-GSDKMerchant_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GSDKMerchant_Tests-Info.plist"; sourceTree = "<group>"; };
-		4024D3BCCC6F4565DE0D71FCAD377323 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4024D3BCCC6F4565DE0D71FCAD377323 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45E55839D80D852081C94B2508B559FB /* GSDKMerchant.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GSDKMerchant.modulemap; sourceTree = "<group>"; };
 		49FFD02B5D7876CE7FF1C3A57F059840 /* Pods-GSDKMerchant_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GSDKMerchant_Example-Info.plist"; sourceTree = "<group>"; };
 		4C707AC86D3C305804A1602CD5C0AA23 /* Pods-GSDKMerchant_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GSDKMerchant_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4D69D1F7902B9D3F81794C085CA025D9 /* knConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
-		4DA06BA80F3AAA42AFA1045C0713D3B2 /* GSDKMerchant */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GSDKMerchant; path = GSDKMerchant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA06BA80F3AAA42AFA1045C0713D3B2 /* GSDKMerchant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GSDKMerchant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A6BE4C7F7CA10F35BCC456A0F75A84 /* Signature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signature.swift; path = Source/Signature.swift; sourceTree = "<group>"; };
 		50FADB4DC3FA6A762D4276D6AD411A51 /* Pods-GSDKMerchant_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GSDKMerchant_Example.release.xcconfig"; sourceTree = "<group>"; };
 		516D77788590B8109D304F076A21E021 /* Pods-GSDKMerchant_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GSDKMerchant_Example-dummy.m"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		7E4E576CA22AA4657FD2421C183BEC92 /* PublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublicKey.swift; path = Source/PublicKey.swift; sourceTree = "<group>"; };
 		897C9D4AC1C46BD7BC3B7C9AE4240ADC /* SampleClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SampleClass.swift; path = Classes/SampleClass.swift; sourceTree = "<group>"; };
 		952925E838A0DE4D7BDC4EE54022633D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A207EB87B4E533F81268605693889A4A /* PrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrivateKey.swift; path = Source/PrivateKey.swift; sourceTree = "<group>"; };
 		A601A1FD69AA5FA753D34CCB32C54E90 /* SwiftyRSA.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyRSA.modulemap; sourceTree = "<group>"; };
 		AA2309377CDB9DC2FAD38FF66A826A86 /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Assests/Media.xcassets; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		E3FA52A47B45F9B6EF3DDFF70625A2AD /* GSDKMerchant-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GSDKMerchant-Info.plist"; sourceTree = "<group>"; };
 		EC0C49AC4FD8AA2AD7F339C216D6473B /* GSDKMerchant-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GSDKMerchant-umbrella.h"; sourceTree = "<group>"; };
 		EC9207FF74F5725A4386F346BCBF1A7D /* SwiftyRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyRSAError.swift; path = Source/SwiftyRSAError.swift; sourceTree = "<group>"; };
-		F1C9EEB8782C020827E2442ACAB6C89E /* Pods-GSDKMerchant_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GSDKMerchant_Tests"; path = Pods_GSDKMerchant_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C9EEB8782C020827E2442ACAB6C89E /* Pods_GSDKMerchant_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDKMerchant_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2638151D865C32FB90EEA304370289F /* Pods-GSDKMerchant_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GSDKMerchant_Tests-umbrella.h"; sourceTree = "<group>"; };
 		FE0E8BE5B67A87CA1B078B2F212A53A8 /* Pods-GSDKMerchant_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GSDKMerchant_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FFA0BD9DF5C429841B9855858D37878F /* Asn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Asn1Parser.swift; path = Source/Asn1Parser.swift; sourceTree = "<group>"; };
@@ -262,7 +262,6 @@
 			children = (
 				21A8AF5C97D1DC825D2CD300035EB109 /* GolootloEventProtocol.swift */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -282,7 +281,6 @@
 				5FE21232262259399A43FC995A3F347E /* Constants.swift */,
 				4D69D1F7902B9D3F81794C085CA025D9 /* knConstraints.swift */,
 			);
-			name = Constants;
 			path = Constants;
 			sourceTree = "<group>";
 		};
@@ -292,17 +290,16 @@
 				A1F4CC39C8C2421F9CED56700A892A89 /* ObjC */,
 				FEA1EE1AB5A39A4D5E1EB7B82085C1C0 /* Support Files */,
 			);
-			name = SwiftyRSA;
 			path = SwiftyRSA;
 			sourceTree = "<group>";
 		};
 		7098D55C71EBFEECA97525F861739786 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DA06BA80F3AAA42AFA1045C0713D3B2 /* GSDKMerchant */,
-				354A03192C435534401AF152F1F05630 /* Pods-GSDKMerchant_Example */,
-				F1C9EEB8782C020827E2442ACAB6C89E /* Pods-GSDKMerchant_Tests */,
-				0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA */,
+				4DA06BA80F3AAA42AFA1045C0713D3B2 /* GSDKMerchant.framework */,
+				354A03192C435534401AF152F1F05630 /* Pods_GSDKMerchant_Example.framework */,
+				F1C9EEB8782C020827E2442ACAB6C89E /* Pods_GSDKMerchant_Tests.framework */,
+				0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,7 +335,6 @@
 				6C467713D4DECD39BE4D54FA4FB244E5 /* UIView+AnimateGIcon.swift */,
 				0E41089B8CE809C4C56FDDF9C93569F8 /* URL+QueryParams.swift */,
 			);
-			name = Extension;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -370,7 +366,6 @@
 				5AA95743BB4260A7E01541D06AB452EB /* QRScannerViewController.swift */,
 				6F7924E6FA91C0620C9D3C99497CD566 /* QRScannerWorker.swift */,
 			);
-			name = Scanner;
 			path = Scanner;
 			sourceTree = "<group>";
 		};
@@ -404,7 +399,6 @@
 			children = (
 				CD4FE695D38F318566A0369CD994A63E /* LocationService.swift */,
 			);
-			name = LocationManager;
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
@@ -488,7 +482,7 @@
 			);
 			name = GSDKMerchant;
 			productName = GSDKMerchant;
-			productReference = 4DA06BA80F3AAA42AFA1045C0713D3B2 /* GSDKMerchant */;
+			productReference = 4DA06BA80F3AAA42AFA1045C0713D3B2 /* GSDKMerchant.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		65F749243A87DA1AA0AAA39891380AA9 /* Pods-GSDKMerchant_Example */ = {
@@ -508,7 +502,7 @@
 			);
 			name = "Pods-GSDKMerchant_Example";
 			productName = Pods_GSDKMerchant_Example;
-			productReference = 354A03192C435534401AF152F1F05630 /* Pods-GSDKMerchant_Example */;
+			productReference = 354A03192C435534401AF152F1F05630 /* Pods_GSDKMerchant_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		84DB9C0CF6504EE74D7023408BF8B743 /* Pods-GSDKMerchant_Tests */ = {
@@ -527,7 +521,7 @@
 			);
 			name = "Pods-GSDKMerchant_Tests";
 			productName = Pods_GSDKMerchant_Tests;
-			productReference = F1C9EEB8782C020827E2442ACAB6C89E /* Pods-GSDKMerchant_Tests */;
+			productReference = F1C9EEB8782C020827E2442ACAB6C89E /* Pods_GSDKMerchant_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		92A1C13902E7ACDA3ABB5BA1FEACC86C /* SwiftyRSA */ = {
@@ -545,7 +539,7 @@
 			);
 			name = SwiftyRSA;
 			productName = SwiftyRSA;
-			productReference = 0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA */;
+			productReference = 0DA4828908E30CE4A29CB9AD3A405635 /* SwiftyRSA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -566,7 +560,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
 			productRefGroup = 7098D55C71EBFEECA97525F861739786 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -757,7 +750,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyRSA/SwiftyRSA-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyRSA/SwiftyRSA-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyRSA/SwiftyRSA.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyRSA;
@@ -855,7 +848,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyRSA/SwiftyRSA-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyRSA/SwiftyRSA-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyRSA/SwiftyRSA.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyRSA;
@@ -958,8 +951,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

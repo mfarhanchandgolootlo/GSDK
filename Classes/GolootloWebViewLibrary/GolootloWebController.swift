@@ -98,14 +98,18 @@ public enum CrossButtonAlignemnt
     public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String, appversion: String, hideCross: Bool, crossAlignemtn: Int, pemfile: String)
     {
         super.init(nibName: nil, bundle: nil)
-        self.baseUrl        = baseURL
+        
+        //  let webviewURL = (self.baseUrl ?? "") + "data=" + dataObject + "&appversion=" + appversion + "&client=ios"
+
         let encodedDataResult = getEncoded(plainData: dataObject, pemFileName: pemfile)
         
-        let webviewURL = (self.baseUrl ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
-        
-//        let webviewURL = (self.baseUrl ?? "") + "data=" + dataObject + "&appversion=" + appversion + "&client=ios"
+        let webviewURL = (baseURL ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
         self.stringURL = webviewURL
         
+        if let url = URL(string: webviewURL)
+        {
+            self.baseUrl        = url.host
+        }
         self.eventDelegate  = delegate
         
         self.isHideCrossButton = hideCross
