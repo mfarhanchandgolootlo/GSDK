@@ -26,7 +26,7 @@ pod 'GSDKMerchant'
   pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.30'
 ```
 
-## Usaage
+## Usage
 
 ```ruby
 import GSDKMerchant
@@ -34,15 +34,30 @@ import GSDKMerchant
 Then
 
 ```ruby
-    let merchant = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "")
-    
-        crossAlignemtn = 0 -> left
-        crossAlignemtn = 1 -> right
-        
+    let merchant = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key.pem")
     self.present(merchant, animated: true) {
         
     }
 ```
+where 
+
+```ruby
+    crossAlignemtn = 0 -> left
+    crossAlignemtn = 1 -> right
+    appversion -> api version which we will give you
+```
+And
+
+```ruby
+    dataValue = "UserId=abc&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"
+```
+
+And
+
+```ruby
+    pem = Public-Key.pem -> put your .pem file in the main project and give proper name in order to encode data
+```
+        
 ## Author
 
 Muhammad Farhan, muhammad.farhan@golootlo.pk, farhan.chnd88@gmail.com
