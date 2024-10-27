@@ -26,6 +26,11 @@ pod 'GSDKMerchant'
   pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.30'
 ```
 
+## Xcode Setting
+```ruby
+    Update your Xcode project build (target) option put ENABLE_USER_SCRIPT_SANDBOXING to 'No', default is 'YES'
+```
+
 ## Usage
 
 ```ruby
@@ -34,7 +39,7 @@ import GSDKMerchant
 Then
 
 ```ruby
-    let merchant = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key.pem")
+    let merchant = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key")
     self.present(merchant, animated: true) {
         
     }
@@ -56,9 +61,20 @@ And
 And
 
 ```ruby
-    pem = Public-Key.pem -> put your .pem file in the main project and give proper name in order to encode data
+    pem = Public-Key.pem 
+    put your .pem file in the main project and give proper name in order to encode data (put pem file name without extension .pem)
 ```
-        
+
+## GolootloWebController Delegates
+```ruby
+    func golootlo(event: String)
+    func golootloViewDidLoad(animated: Bool)
+    func golootloViewWillAppear(_ animated: Bool)
+    func golootloViewDidAppear(_ animated: Bool)
+    func golootloViewDidDisappear(_ animated: Bool)
+    func golootloViewWillDisappear(_ animated: Bool)
+    func golootloWillMoveFromParent()
+```  
 ## Author
 
 Muhammad Farhan, muhammad.farhan@golootlo.pk, farhan.chnd88@gmail.com
