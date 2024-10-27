@@ -35,5 +35,15 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>App need camera permission to scan QR code.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>App needs your location permission to show nearby discounts.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>App needs your location permission to show nearby discounts.</string>
+    <key>NSLocationUsageDescription</key>
+    <string>App needs your location permission to show nearby discounts.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>App needs your location permission to show nearby discounts.</string>
 </dict>
 </plist>

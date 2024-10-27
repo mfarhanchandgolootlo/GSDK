@@ -212,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = HQ2SSMSPGG;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = HQ2SSMSPGG;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -480,6 +482,7 @@
 			baseConfigurationReference = 01CE3AF368F2028D0234EF28 /* Pods-GSDKMerchant_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HQ2SSMSPGG;
 				INFOPLIST_FILE = GSDKMerchant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -496,6 +499,7 @@
 			baseConfigurationReference = 6F7F597405325116DE5C5432 /* Pods-GSDKMerchant_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HQ2SSMSPGG;
 				INFOPLIST_FILE = GSDKMerchant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -511,6 +515,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C5B7D03FA4C98F16436BFAD /* Pods-GSDKMerchant_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = HQ2SSMSPGG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -534,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F594A7EF2766FE7107986B8 /* Pods-GSDKMerchant_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = HQ2SSMSPGG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

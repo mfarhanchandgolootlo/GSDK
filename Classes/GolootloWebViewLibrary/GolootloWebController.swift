@@ -11,6 +11,8 @@ import WebKit
 import CoreLocation
 import SwiftyRSA
 import GSDKMerchant
+import AVFoundation
+import CoreLocation
 
 public enum CrossButtonAlignemnt
 {
@@ -114,6 +116,8 @@ public enum CrossButtonAlignemnt
         
         self.isHideCrossButton = hideCross
         self.alignemtn = (crossAlignemtn == 0) ? .left : .right
+        requestCameraAccess()
+        locationManager.requestLocationPermission()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -1250,3 +1254,33 @@ public class ImageLoader {
         return nil
     }
 }
+
+extension GolootloWebController
+{
+    func requestCameraAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            // The user has already granted permission
+            print("Camera access already granted")
+        case .notDetermined:
+            // The user has not been asked yet; request permission
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                DispatchQueue.main.async {
+                    if granted {
+                        print("Camera access granted")
+                    } else {
+                        print("Camera access denied")
+                    }
+                }
+            }
+        case .denied:
+            print("Camera access was previously denied")
+            // Optionally, guide the user to Settings to enable access
+        case .restricted:
+            print("Camera access is restricted and cannot be requested")
+        @unknown default:
+            print("Unknown authorization status")
+        }
+    }
+}
+

@@ -74,6 +74,27 @@ pem = Public-Key.pem
 in order to encode data (put pem file name without extension .pem)'
 ```
 
+## Add Camera Permision in info.plist
+```ruby
+<key>NSCameraUsageDescription</key>
+<string>$(PRODUCT_NAME) camera description.</string> 
+```
+
+## Add Location Permission 
+```ruby
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+    
+<key>NSLocationAlwaysUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+
+<key>NSLocationUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+```
+
 ## GolootloWebController Delegates
 ```ruby
     func golootlo(event: String)

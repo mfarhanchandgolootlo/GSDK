@@ -23,7 +23,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     var lastLocation: CLLocation?
     var delegate: LocationServiceDelegate?
-    
+    let locationManagertmp = CLLocationManager()
+
     override init() {
         super.init()
         
@@ -101,5 +102,30 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         }
         
         delegate.tracingLocationDidFailWithError(error: error)
+    }
+    
+    func requestLocationPermission() {
+        self.locationManagertmp.delegate = self  // Make sure to conform to CLLocationManagerDelegate
+        self.locationManagertmp.requestWhenInUseAuthorization()  // Request "When In Use" permission
+        // Or use requestAlwaysAuthorization() for "Always" permission
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            print("Location permission not determined yet.")
+        case .restricted:
+            print("Location access is restricted.")
+        case .denied:
+            print("Location permission denied.")
+        case .authorizedWhenInUse:
+            print("Location permission granted for 'When In Use'.")
+            self.locationManagertmp.startUpdatingLocation()  // Start updating location if needed
+        case .authorizedAlways:
+            print("Location permission granted for 'Always'.")
+            self.locationManagertmp.startUpdatingLocation()  // Start updating location if needed
+        @unknown default:
+            print("Unknown authorization status.")
+        }
     }
 }
