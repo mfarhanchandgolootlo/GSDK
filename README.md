@@ -49,20 +49,26 @@ where
 ```ruby
     crossAlignemtn = 0 -> left
     crossAlignemtn = 1 -> right
-    hideCross = false -> it will not hide cross button when you are presenting our controller, if you use hideCross = true then it will hide that cross button
-    appversion -> api version which we will give you
+    
+    hideCross = false 
+    'it will not hide cross button when you are presenting our controller ,
+    if you use hideCross = true then it will hide that cross button
+    
+    appversion -> api version which we will give you'
 ```
 And
 
 ```ruby
-    dataValue = "UserId=abc&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  -> you need to  put this datavalue in or sdk object value i.e, dataObject
+    dataValue = "UserId=abc&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
+    'you need to  put this datavalue in or sdk object value i.e, dataObject'
 ```
 
 And
 
 ```ruby
     pem = Public-Key.pem 
-    put your .pem file in the main project and give proper name in order to encode data (put pem file name without extension .pem)
+    'put your .pem file in the main project and give proper name 
+    in order to encode data (put pem file name without extension .pem)'
 ```
 
 ## GolootloWebController Delegates
