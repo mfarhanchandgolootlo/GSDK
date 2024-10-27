@@ -44,12 +44,13 @@ where
 ```ruby
     crossAlignemtn = 0 -> left
     crossAlignemtn = 1 -> right
+    hideCross = false -> it will not hide cross button when you are presenting our controller, if you use hideCross = true then it will hide that cross button
     appversion -> api version which we will give you
 ```
 And
 
 ```ruby
-    dataValue = "UserId=abc&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"
+    dataValue = "UserId=abc&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  -> you need to  put this datavalue in or sdk object value i.e, dataObject
 ```
 
 And
@@ -61,6 +62,7 @@ And
 ## Author
 
 Muhammad Farhan, muhammad.farhan@golootlo.pk, farhan.chnd88@gmail.com
+Abdul Moiz, abdul.moiz@golootlo.pk
 
 ## License
 
