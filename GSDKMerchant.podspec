@@ -6,19 +6,6 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
-# How to use this file
-# 1) git add .
-# 2) git commit -m “”
-# 3) git tag 0.0.5
-# 4) git push -—tags
-# 5) git push origin main
-# 6) pod lib lint GSDKMerchant.podspec —-verbose -> Validation check purpose in detail
-# 7) pod trunk push GSDKMerchant.podspec —-verbose
-# 8) pod trunk push GSDKMerchant.podspec --verbose --allow-warnings
-# 9) pod trunk push GSDKMerchant.podspec --allow-warnings
-
-#https://medium.com/@ankushppie/creating-custom-pods-in-swift-for-ios-a-step-by-step-guide-e16105579b26
-
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
   s.version          = '0.0.30'  # '0.0.30' -> use 0.0.# (for development) and for clients use 1.0.#
