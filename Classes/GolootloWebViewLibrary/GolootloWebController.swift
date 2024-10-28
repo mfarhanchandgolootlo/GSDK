@@ -29,7 +29,7 @@ public enum CrossButtonAlignemnt
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font:UIFont.systemFont(ofSize: 17)])
     
-    var alignemtn:CrossButtonAlignemnt? = .left
+    private var alignemtn:CrossButtonAlignemnt? = .left
    
     @objc public var webView: WKWebView?{
         
@@ -39,13 +39,13 @@ public enum CrossButtonAlignemnt
         }
     }
     
-    var podBundle: Bundle? = nil
+    private var podBundle: Bundle? = nil
     
     private var closeButton: UIButton?
     private var bgImageView: UIImageView?
     private var gIcon:UIImageView?
     //internal var activityIndicator: UIActivityIndicatorView  = UIActivityIndicatorView.init(style: .gray)
-    public var isHideCrossButton = false
+    private var isHideCrossButton = false
     
     internal var stringURL:String? {
         
