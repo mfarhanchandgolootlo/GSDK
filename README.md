@@ -48,6 +48,8 @@ where
 ```ruby
 crossAlignemtn = 0 -> left
 crossAlignemtn = 1 -> right
+
+cross button will show when you present our mercantController, otherwise it will not show
 ```
 
 ```ruby
@@ -55,6 +57,7 @@ hideCross = false
 "it will not hide cross button when you are presenting our controller ,
 if you use hideCross = true then it will hide that cross button"
 ```
+
 ```ruby
 appversion -> api version which we will give you'
 ```
@@ -62,16 +65,19 @@ appversion -> api version which we will give you'
 And
 
 ```ruby
-dataValue = "UserId=abc&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
-'you need to  put this datavalue in or sdk object value i.e, dataObject'
+dataValue = "UserId=clientName&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
+
+you need to  put this datavalue in or sdk object value i.e, dataObject
+make sure you put correct 'UserId' which we will provide to you.
 ```
 
 And
 
 ```ruby
 pem = Public-Key.pem 
-'put your .pem file in the main project and give proper name 
-in order to encode data (put pem file name without extension .pem)'
+
+put your .pem file in the main project and give proper name 
+in order to encode data (put pem file name without extension .pem)
 ```
 
 ## Add Camera Permision in info.plist

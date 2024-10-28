@@ -106,12 +106,12 @@ public enum CrossButtonAlignemnt
         let encodedDataResult = getEncoded(plainData: dataObject, pemFileName: pemfile)
         
         let webviewURL = (baseURL ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
-        self.stringURL = webviewURL
         
         if let url = URL(string: webviewURL)
         {
             self.baseUrl        = url.host
         }
+        self.stringURL = webviewURL
         self.eventDelegate  = delegate
         
         self.isHideCrossButton = hideCross

@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		C8683679E6DCC33C6DEF1B05 /* Pods_GSDKMerchant_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E0C792C0B1076AF93D0300 /* Pods_GSDKMerchant_Tests.framework */; };
+		CD93D4CB2CCF7C6B00CB871A /* Golootlo-Staging-Public-Key.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD93D4CA2CCF7C6B00CB871A /* Golootlo-Staging-Public-Key.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6F7F597405325116DE5C5432 /* Pods-GSDKMerchant_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDKMerchant_Example.release.xcconfig"; path = "Target Support Files/Pods-GSDKMerchant_Example/Pods-GSDKMerchant_Example.release.xcconfig"; sourceTree = "<group>"; };
 		78E0C792C0B1076AF93D0300 /* Pods_GSDKMerchant_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSDKMerchant_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5B7D03FA4C98F16436BFAD /* Pods-GSDKMerchant_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSDKMerchant_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GSDKMerchant_Tests/Pods-GSDKMerchant_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD93D4CA2CCF7C6B00CB871A /* Golootlo-Staging-Public-Key.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Golootlo-Staging-Public-Key.pem"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		607FACD21AFB9204008FA782 /* Example for GSDKMerchant */ = {
 			isa = PBXGroup;
 			children = (
+				CD93D4CA2CCF7C6B00CB871A /* Golootlo-Staging-Public-Key.pem */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -250,6 +253,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				CD93D4CB2CCF7C6B00CB871A /* Golootlo-Staging-Public-Key.pem in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -140,11 +140,11 @@ internal class QRScannerViewController: UIViewController
                         str = "Need camera permission to read QR code."
                     case .cameraNotDetected:
                         str = "Need camera permission to read QR code."
-                    default:
-                        str = error.localizedDescription
+//                    default:
+//                        str = error.localizedDescription
                     }
                     
-                    
+                    print(str)
                 }
                 
                 
@@ -324,20 +324,22 @@ internal class QRScannerViewController: UIViewController
     
     @objc func openSetting(){
         
-        if #available(iOS 10.0, *){
-            #if swift(>=5.0)
-            UIApplication.shared.openURL(URL(string:UIApplication.openSettingsURLString)!)
-            #else
-                UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
-            #endif
-            
-        }else{
-             #if swift(>=5.0)
-            UIApplication.shared.openURL(URL(string:UIApplication.openSettingsURLString)!)
-            #else
-                UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
-            #endif
-        }
+        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        
+//        if #available(iOS 10.0, *){
+//            #if swift(>=5.0)
+//            UIApplication.shared.openURL(URL(string:UIApplication.openSettingsURLString)!)
+//            #else
+//                UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+//            #endif
+//            
+//        }else{
+//             #if swift(>=5.0)
+//            UIApplication.shared.openURL(URL(string:UIApplication.openSettingsURLString)!)
+//            #else
+//                UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
+//            #endif
+//        }
         
     }
     func showScanAlert(channelName:String){
@@ -385,7 +387,7 @@ extension QRScannerViewController {
     // call service to post data to server
     func detected(code: String) {
         
-        guard let url = self.baseUrl else {return}
+        guard let _ = self.baseUrl else {return}
             
             //let stringURL = "https://\(url)/scanner?ref=index&qrCode=\(code)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
             
