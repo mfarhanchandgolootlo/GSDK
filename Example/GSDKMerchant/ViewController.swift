@@ -21,9 +21,11 @@ class ViewController: UIViewController {
         let dataValue = "UserId=NBP&FirstName=TEST&LastName=USER&Phone=923360824990&Password=YMcxt4S1I3ZpG6dqsvxt"
         
         let merchant = GolootloWebController(baseURL: "https://webview-staging.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: 1, pemfile: "Golootlo-Staging-Public-Key")
-        self.present(merchant, animated: true) {
-            print("loaded controller")
-        }
+//        self.present(merchant, animated: true) {
+//            print("loaded controller")
+//        }
+        
+        self.navigationController?.pushViewController(merchant, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,30 +39,30 @@ class ViewController: UIViewController {
 extension ViewController: GolootloEventDelegate
 {
     func golootlo(event: String) {
-        print("asdfsadf")
+        print("golootlo Event " + event)
     }
     
     func golootloViewDidLoad(animated: Bool) {
-        print("asdfsadf")
+        print("golootloViewDidLoad")
     }
     
     func golootloViewWillAppear(_ animated: Bool) {
-        print("asdfsadf")
+        print("golootloViewWillAppear")
     }
     
     func golootloViewDidAppear(_ animated: Bool) {
-        print("asdfsadf")
+        print("golootloViewDidAppear")
     }
     
     func golootloViewDidDisappear(_ animated: Bool) {
-        print("asdfsadf")
+        print("golootloViewDidDisappear")
     }
     
     func golootloViewWillDisappear(_ animated: Bool) {
-        print("asdfsadf")
+        print("golootloViewWillDisappear")
     }
     
     func golootloWillMoveFromParent() {
-        print("asdfsadf")
+        print("golootloWillMoveFromParent")
     }
 }

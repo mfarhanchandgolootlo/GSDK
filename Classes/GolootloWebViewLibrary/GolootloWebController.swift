@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import WebKit
+@preconcurrency import WebKit
 import CoreLocation
 import SwiftyRSA
-import GSDKMerchant
+//import GSDKMerchant
 import AVFoundation
 import CoreLocation
 
@@ -72,7 +72,10 @@ public enum CrossButtonAlignemnt
             
             guard let tpCon = topConstraint else {return}
             let topSpace = topPadding < allowedSpacing ? topPadding:allowedSpacing
-            tpCon.constant = topLayoutGuide.length + topSpace
+//            tpCon.constant = topLayoutGuide.length + topSpace
+            
+            let topSafeAreaLength = view.safeAreaInsets.top
+            tpCon.constant = topSafeAreaLength + topSpace
             
             self.view.setNeedsDisplay()
         }
@@ -150,7 +153,7 @@ public enum CrossButtonAlignemnt
             setNavBarTitle()
         }
         
-        if let customImage = UIImage.fromPod(named: "Sad Face").0 {
+        if let _ = UIImage.fromPod(named: "Sad Face").0 {
             // Use the image
             print("han")
             self.podBundle = UIImage.fromPod(named: "Sad Face").1
@@ -383,7 +386,8 @@ public enum CrossButtonAlignemnt
         webView!.translatesAutoresizingMaskIntoConstraints = false
         
         let topSpace = topPadding < allowedSpacing ? topPadding:allowedSpacing
-         topConstraint = webView!.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length + topSpace)
+//         topConstraint = webView!.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length + topSpace)
+        topConstraint = webView!.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top + topSpace)
         let bottom = webView!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         
         if #available(iOS 11.0, *) {
@@ -459,7 +463,8 @@ public enum CrossButtonAlignemnt
         
         bgImageView!.translatesAutoresizingMaskIntoConstraints = false
         
-        let top = bgImageView!.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length)
+//        let top = bgImageView!.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length)
+        let top = bgImageView!.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top)
         let bottom = bgImageView!.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         
         if #available(iOS 11.0, *) {
@@ -561,46 +566,59 @@ extension GolootloWebController:LocationServiceDelegate{
     }
     static func showAlert(){
         
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
             
-            
             let alertController = UIAlertController(title:"Access Denied", message:"Golootlo needs your location permission to show nearby discounts."
-                       , preferredStyle: UIAlertController.Style.alert)
-                       
-                       
-                       alertController.addAction(UIAlertAction.init(title: "Settings", style: .default, handler: { (action) in
-                       
-                           if let url = URL(string:UIApplication.openSettingsURLString) {
-                               if UIApplication.shared.canOpenURL(url) {
-                                   if #available(iOS 10.0, *) {
-                                       UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                   } else {
-                                       UIApplication.shared.openURL(url)
-                                   }
-                               }
-                           }
-                           
-                       }))
-                       
-                       
-                alertController.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (action) in
+                                                    , preferredStyle: UIAlertController.Style.alert)
             
-                    
-                    
-                    
-                }))
+            
+            alertController.addAction(UIAlertAction.init(title: "Settings", style: .default, handler: { (action) in
                 
-                       if var topController = UIApplication.shared.keyWindow?.rootViewController {
-                           while let presentedViewController = topController.presentedViewController {
-                               topController = presentedViewController
-                           }
-                           // topController should now be your topmost view controller
-                           topController.present(alertController, animated: true, completion: nil)
-                       }
-                      
-                       
-                       //print("Show Setting Alert")
+                if let url = URL(string:UIApplication.openSettingsURLString) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(url)
+                        }
+                    }
+                }
+                
+            }))
+            
+            
+            alertController.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (action) in
+                
+                
+            }))
+            
+            if #available(iOS 13.0, *) {
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
+                    // Use `keyWindow` safely
+                    print("Found the key window:", keyWindow)
+                    
+                    if var topController = keyWindow.rootViewController {
+                        while let presentedViewController = topController.presentedViewController {
+                            topController = presentedViewController
+                        }
+                        // topController should now be your topmost view controller
+                        topController.present(alertController, animated: true, completion: nil)
+                    }
+                }
+            } else {
+                // Fallback on earlier versions
+                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    // topController should now be your topmost view controller
+                    topController.present(alertController, animated: true, completion: nil)
+                }
+            }
+            
+            
+            //print("Show Setting Alert")
         })
     }
     
@@ -654,7 +672,7 @@ extension GolootloWebController{
         
         if keyPath == "estimatedProgress" {
             
-           debugPrint(" webView estimatedProgress = \(self.webView?.estimatedProgress)")
+            debugPrint(" webView estimatedProgress = \(String(describing: self.webView?.estimatedProgress))")
             
             if let wkweb = self.webView, wkweb.estimatedProgress > 0.6{
                  self.gIcon?.isHidden = true
@@ -1187,100 +1205,3 @@ extension GolootloWebController
         return nil
     }
 }
-
-
-
-extension UIImage {
-    //    static func fromPod(named name: String) -> UIImage? {
-    //
-    //        guard let bundle = Bundle(identifier: "org.cocoapods.GSDKMerchant") else {
-    //            print("Bundle not found.")
-    //            return nil
-    //        }
-    //
-    //        return UIImage(named: name, in: bundle, compatibleWith: nil)
-    //    }
-    
-    static func fromPod(named name: String) -> (UIImage?, Bundle?) {
-        // Loop through all bundles to find the correct one for the image
-        for bundle in Bundle.allBundles + Bundle.allFrameworks {
-            if let image = UIImage(named: name, in: bundle, compatibleWith: nil) {
-                
-                return (image, bundle)
-            }
-        }
-        print("Image not found in any available bundle.")
-        return (nil, nil)
-    }
-}
-
-public func test() -> UIImage?
-{
-    guard let resourceBundleURL = Bundle.main.url(forResource: "SDKPodResources", withExtension: "bundle"),
-          let resourceBundle = Bundle(url: resourceBundleURL) else {
-        print("Resource bundle not found.")
-        return nil
-    }
-    let img = UIImage(named: "Sad Face", in: resourceBundle, compatibleWith: nil)
-    return img
-}
-
-
-
-
-public class ImageLoader {
-    public static func loadImage(named imageName: String) -> UIImage? {
-        // Ensure that the bundle is correctly fetched
-        let bundle = Bundle(for: self)
-        
-        // If your images are inside an assets folder, use this line
-        if let image = UIImage(named: imageName, in: bundle, compatibleWith: nil) {
-            return image
-        }
-        
-        // Alternative method if image not in assets folder
-        if let imageURL = bundle.url(forResource: imageName, withExtension: "pdf"),
-           let imageData = try? Data(contentsOf: imageURL) {
-            return UIImage(data: imageData)
-        }
-        
-        // Alternative method if image not in assets folder
-        if let imageURL = bundle.url(forResource: imageName, withExtension: "png"),
-           let imageData = try? Data(contentsOf: imageURL) {
-            return UIImage(data: imageData)
-        }
-        
-        // If image not found, return nil
-        return nil
-    }
-}
-
-extension GolootloWebController
-{
-    func requestCameraAccess() {
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            // The user has already granted permission
-            print("Camera access already granted")
-        case .notDetermined:
-            // The user has not been asked yet; request permission
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                DispatchQueue.main.async {
-                    if granted {
-                        print("Camera access granted")
-                    } else {
-                        print("Camera access denied")
-                    }
-                }
-            }
-        case .denied:
-            print("Camera access was previously denied")
-            // Optionally, guide the user to Settings to enable access
-        case .restricted:
-            print("Camera access is restricted and cannot be requested")
-        @unknown default:
-            print("Unknown authorization status")
-        }
-    }
-}
-
