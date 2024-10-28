@@ -130,6 +130,13 @@ public enum CrossButtonAlignemnt
     
     public override func loadView() {
         super.loadView()
+        
+        if let _ = UIImage.fromPod(named: "Sad Face").0 {
+            // Use the image
+            print("han")
+            self.podBundle = UIImage.fromPod(named: "Sad Face").1
+        }
+        
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         self.setupWebView()
@@ -151,12 +158,6 @@ public enum CrossButtonAlignemnt
         
        if self.navigationController != nil{
             setNavBarTitle()
-        }
-        
-        if let _ = UIImage.fromPod(named: "Sad Face").0 {
-            // Use the image
-            print("han")
-            self.podBundle = UIImage.fromPod(named: "Sad Face").1
         }
         
 //        if let myImage = ImageLoader.loadImage(named: "Sad Face") {
