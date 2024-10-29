@@ -18,6 +18,15 @@ class ViewController: UIViewController {
     
     @IBAction func actionButtonShowControllerUsingPresnet()
     {
+        let merchant = GolootloWebController(baseURL: "https://webview-staging.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: 0, pemfile: "Golootlo-Staging-Public-Key")
+        
+        self.present(merchant, animated: true) {
+            print("loaded controller")
+        }
+    }
+    
+    @IBAction func actionButtonShowControllerUsingRightPresnet()
+    {
         let merchant = GolootloWebController(baseURL: "https://webview-staging.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: 1, pemfile: "Golootlo-Staging-Public-Key")
         
         self.present(merchant, animated: true) {
