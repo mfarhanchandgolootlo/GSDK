@@ -92,9 +92,11 @@ internal class QRScannerViewController: UIViewController
         
         super.viewDidAppear(animated)
         
-        if let worker = self.worker, let _ = self.worker?.captureSession{
-            if !(worker.captureSession?.isRunning)!{
-                worker.captureSession?.startRunning()
+        DispatchQueue.global(qos: .background).async {
+            if let worker = self.worker, let _ = self.worker?.captureSession{
+                if !(worker.captureSession?.isRunning)!{
+                    worker.captureSession?.startRunning()
+                }
             }
         }
     }
@@ -150,8 +152,9 @@ internal class QRScannerViewController: UIViewController
                 
             })
             
-            self.worker?.captureSession?.startRunning()
-            
+            DispatchQueue.global(qos: .background).async {
+                self.worker?.captureSession?.startRunning()   
+            }
             let bundle = Bundle(for: type(of: self))
             let image = UIImage(named: "Camera Overlay", in: bundle, compatibleWith: nil)
             let imageView = UIImageView(image: image)
