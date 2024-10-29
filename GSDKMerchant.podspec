@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSDKMerchant'
-  s.version          = '0.0.37'  # '0.0.30' -> use 0.0.# (for development) and for clients use 1.0.#
+  s.version          = '0.0.38'  # '0.0.30' -> use 0.0.# (for development) and for clients use 1.0.#
   s.summary          = 'A short description of GSDKMerchant.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
   s.swift_version = '5.0'
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'Classes/**/*.swift'
+  s.source_files = 'Classes/**/*.{h,m,swift}'
   
   s.script_phase = { :name => 'Disable Code Signing', :script => 'export CODE_SIGNING_ALLOWED=NO', :execution_position => :before_compile }
 

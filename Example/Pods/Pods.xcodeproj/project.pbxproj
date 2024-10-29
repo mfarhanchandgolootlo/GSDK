@@ -38,6 +38,7 @@
 		B8CBB3C93A60DDF85CF64F3D706FE29F /* SwiftyRSA-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3FC44EEB94E7350332E7E3E8B3BE40 /* SwiftyRSA-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA1D7304D0B036ED14E4B1343F3DA891 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952925E838A0DE4D7BDC4EE54022633D /* Foundation.framework */; };
 		C9BE9ACB1905B2AF57008C3C2D0E79D3 /* Pods-GSDKMerchant_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F2638151D865C32FB90EEA304370289F /* Pods-GSDKMerchant_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD35ACF92CD0B9C300085C04 /* GolootloWebViewLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = CD35ACF82CD0B9C300085C04 /* GolootloWebViewLibrary.h */; };
 		CE9610A3E37F6655447CBA805C8BBDB6 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544BB4F044A9C32A62BCC8D9C8DF8C45 /* Key.swift */; };
 		D09F77A9E53536EB3559BBFD8F17DF28 /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69D1F7902B9D3F81794C085CA025D9 /* knConstraints.swift */; };
 		D2772AC61970A137478C1E14324DE12E /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA95743BB4260A7E01541D06AB452EB /* QRScannerViewController.swift */; };
@@ -135,6 +136,7 @@
 		C2B9137B1D2E3B1DDBC798D64CCD040B /* ClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClearMessage.swift; path = Source/ClearMessage.swift; sourceTree = "<group>"; };
 		C3B2A0B779CE31153B2C0D8A7F8DC7FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		C799E009C47AC9B0606C0236A125080B /* Pods-GSDKMerchant_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GSDKMerchant_Tests-dummy.m"; sourceTree = "<group>"; };
+		CD35ACF82CD0B9C300085C04 /* GolootloWebViewLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GolootloWebViewLibrary.h; sourceTree = "<group>"; };
 		CD4FE695D38F318566A0369CD994A63E /* LocationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		D44729ED51D42E1E31A75EBFC98BEE50 /* Pods-GSDKMerchant_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GSDKMerchant_Example.modulemap"; sourceTree = "<group>"; };
 		DA74174AE63CB95E2BFBF1D730A947BF /* QRScannerVC+Output.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "QRScannerVC+Output.swift"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		0CFB0C09F3C63E7897C92A8B2D70E06B /* GolootloWebViewLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				CD35ACF82CD0B9C300085C04 /* GolootloWebViewLibrary.h */,
 				C15075B241534CC5704E657E1D363912 /* GolootloWebController.swift */,
 				426A6D6DBF9E894CAD8A70D9B9122760 /* Constants */,
 				9F4982080FCAAED4D7172BF222F3D39B /* Extension */,
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD818854C936987D7515E726930ED04 /* GSDKMerchant-umbrella.h in Headers */,
+				CD35ACF92CD0B9C300085C04 /* GolootloWebViewLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

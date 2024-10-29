@@ -23,7 +23,7 @@ pod 'GSDKMerchant'
 ## Installation using tags
 
 ```ruby
-  pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.30'
+  pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.38'
 ```
 
 ## Xcode Setting
