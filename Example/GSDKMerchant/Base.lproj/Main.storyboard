@@ -35,6 +35,26 @@
                     <view key="view" contentMode="scaleToFill" id="eC6-BV-yLW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv8-Z1-Zfb">
+                                <rect key="frame" x="111" y="106" width="153" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Navigation Stack"/>
+                                <connections>
+                                    <action selector="actionButtonShowControllerUsingNavigaControl" destination="x33-9O-iBT" eventType="touchUpInside" id="BZ3-Uk-GCf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmO-lH-Wm4">
+                                <rect key="frame" x="107" y="193" width="162" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Present Controller"/>
+                                <connections>
+                                    <action selector="actionButtonShowControllerUsingPresnet" destination="x33-9O-iBT" eventType="touchUpInside" id="uuv-ZZ-OZg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Luk-zl-3yf"/>
