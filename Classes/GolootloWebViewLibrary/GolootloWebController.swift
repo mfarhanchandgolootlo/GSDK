@@ -14,7 +14,7 @@ import SwiftyRSA
 import AVFoundation
 import CoreLocation
 
-public enum CrossButtonAlignemnt
+@objc public enum CrossButtonAlignemnt: Int
 {
     case left
     case right
@@ -100,7 +100,7 @@ public enum CrossButtonAlignemnt
 //  MARK: - Comment Old Code
     
     @objc
-    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String?, appversion: String, hideCross: Bool, crossAlignemtn: Int, pemfile: String?)
+    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String?, appversion: String, hideCross: Bool, crossAlignemtn: CrossButtonAlignemnt, pemfile: String?)
     {
         super.init(nibName: nil, bundle: nil)
         
@@ -129,7 +129,7 @@ public enum CrossButtonAlignemnt
         self.eventDelegate  = delegate
         
         self.isHideCrossButton = hideCross
-        self.alignemtn = (crossAlignemtn == 0) ? .left : .right
+        self.alignemtn = crossAlignemtn
         requestCameraAccess()
         locationManager.requestLocationPermission()
     }
