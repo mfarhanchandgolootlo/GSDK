@@ -31,32 +31,69 @@ pod 'GSDKMerchant'
     Update your Xcode project build (target) option 
     put ENABLE_USER_SCRIPT_SANDBOXING to 'No', default is 'YES'
 ```
+
 ## Pod Deployment Xcode Target
 ```ruby
-  Deployment Target -> 12.0
+    Minimum Deployment Target -> 12.0
 ```
 
-Pass value in our variables and it will encrypt that Data
+## Add Camera Permision in info.plist
+
+```ruby
+<key>NSCameraUsageDescription</key>
+<string>$(PRODUCT_NAME) camera description.</string> 
+```
+
+## Add Location Permission 
+```ruby
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+    
+<key>NSLocationAlwaysUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+
+<key>NSLocationUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
+```
 
 ## Usage
 
 ```ruby
 import GSDKMerchant
 ```
-Then
+
+## Pass your data and it will encypt and create URL
 
 ```ruby
-    let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key")
-    "you can present/ push our merchantController in stack"
+
+let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key")
+    
+dataValue = "UserId=clientName&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
+
+you need to  put this datavalue in or sdk object value i.e, dataObject
+make sure you put correct 'UserId' which we will provide to you.
+
+pem = Public-Key.pem 
+
+put your .pem file in the main project and give proper name 
+in order to encode data (put pem file name without extension .pem)
+    
+"you can present/ push our merchantController in stack"
 ```
 OR
 
 ## Using your own encyption data
 ```ruby
-    let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: nil, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: nil)
-    put your "baseURL" encyrpt url like this
-    let baseURL  = "https://baseurl/home?data=skTipOK...."
-    "you can present/ push our merchantController in stack" 
+
+put your "baseURL" encyrpt url like this
+let baseURL  = "https://baseurl/home?data=skTipOK...."
+    
+let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: nil, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: nil)
+    
+"you can present/ push our merchantController in stack"
 ```
 
 where 
@@ -78,44 +115,7 @@ if you use hideCross = true then it will hide that cross button"
 appversion -> api version which we will give you'
 ```
 
-And
-
-```ruby
-dataValue = "UserId=clientName&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
-
-you need to  put this datavalue in or sdk object value i.e, dataObject
-make sure you put correct 'UserId' which we will provide to you.
-```
-
-And
-
-```ruby
-pem = Public-Key.pem 
-
-put your .pem file in the main project and give proper name 
-in order to encode data (put pem file name without extension .pem)
-```
-
-## Add Camera Permision in info.plist
-```ruby
-<key>NSCameraUsageDescription</key>
-<string>$(PRODUCT_NAME) camera description.</string> 
-```
-
-## Add Location Permission 
-```ruby
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
-    
-<key>NSLocationAlwaysUsageDescription</key>
-<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
-
-<key>NSLocationUsageDescription</key>
-<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
-
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>$(PRODUCT_NAME) needs your location permission to show nearby discounts.</string>
-```
+Our Delegates
 
 ## GolootloWebController Delegates
 ```ruby
