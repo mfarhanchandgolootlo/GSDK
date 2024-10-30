@@ -69,7 +69,7 @@ import GSDKMerchant
 
 ```ruby
 
-let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key")
+let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: .right, pemfile: "Public-Key")
     
 dataValue = "UserId=clientName&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
 
@@ -91,7 +91,7 @@ OR
 put your "baseURL" encyrpt url like this
 let baseURL  = "https://baseurl/home?data=skTipOK...."
     
-let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: nil, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: nil)
+let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: nil, appversion: "appversion", hideCross: false, crossAlignemtn: .left, pemfile: nil)
     
 "you can present/ push our merchantController in stack"
 ```
@@ -99,10 +99,11 @@ let merchantController = GolootloWebController(baseURL: "put your base url here"
 where 
 
 ```ruby
-crossAlignemtn = 0 -> left
-crossAlignemtn = 1 -> right
+crossAlignemtn = .left 
+crossAlignemtn = .right
 
-cross button will show when you present our mercantController, otherwise it will not show
+alignment of cross button when you present our mercantController, 
+otherwise when you push our controller then it will not show.
 ```
 
 ```ruby
