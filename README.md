@@ -36,6 +36,8 @@ pod 'GSDKMerchant'
   Deployment Target -> 12.0
 ```
 
+Pass value in our variables and it will encrypt that Data
+
 ## Usage
 
 ```ruby
@@ -47,6 +49,7 @@ Then
     let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key")
     "you can present/ push our merchantController in stack"
 ```
+OR
 
 ## Using your own encyption data
 ```ruby
