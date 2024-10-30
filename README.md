@@ -23,7 +23,7 @@ pod 'GSDKMerchant'
 ## Installation using tags
 
 ```ruby
-  pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.40'
+  pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.41'
 ```
 
 ## Xcode Setting
@@ -47,6 +47,15 @@ Then
     let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: "Public-Key")
     "you can present/ push our merchantController in stack"
 ```
+
+## Using your own encyption data
+```ruby
+    let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: nil, appversion: "appversion", hideCross: false, crossAlignemtn: 0, pemfile: nil)
+    put your "baseURL" encyrpt url like this
+    let baseURL  = "https://baseurl/home?data=skTipOK...."
+    "you can present/ push our merchantController in stack" 
+```
+
 where 
 
 ```ruby

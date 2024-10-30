@@ -100,15 +100,26 @@ public enum CrossButtonAlignemnt
 //  MARK: - Comment Old Code
     
     @objc
-    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String, appversion: String, hideCross: Bool, crossAlignemtn: Int, pemfile: String)
+    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String?, appversion: String, hideCross: Bool, crossAlignemtn: Int, pemfile: String?)
     {
         super.init(nibName: nil, bundle: nil)
         
         //  let webviewURL = (self.baseUrl ?? "") + "data=" + dataObject + "&appversion=" + appversion + "&client=ios"
 
-        let encodedDataResult = getEncoded(plainData: dataObject, pemFileName: pemfile)
+        var encodedDataResult: String? = nil
+        if let dataObjectTmp = dataObject, let pemFiles = pemfile
+        {
+            encodedDataResult = getEncoded(plainData: dataObjectTmp, pemFileName: pemFiles)
+        }
         
-        let webviewURL = (baseURL ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
+        var webviewURL = ""
+        if encodedDataResult != nil
+        {
+            webviewURL = (baseURL ?? "") + "data=" + (encodedDataResult ?? "") + "&appversion=" + appversion + "&client=ios"
+        }
+        else{
+            webviewURL = (baseURL ?? "") + "&appversion=" + appversion + "&client=ios"
+        }
         
         if let url = URL(string: webviewURL)
         {

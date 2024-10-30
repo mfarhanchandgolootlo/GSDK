@@ -37,18 +37,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-cT-HY5">
-                                <rect key="frame" x="84.5" y="240" width="206" height="187.5"/>
+                                <rect key="frame" x="74" y="203.5" width="227" height="260"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv8-Z1-Zfb">
-                                        <rect key="frame" x="27" y="0.0" width="152.5" height="42.5"/>
+                                        <rect key="frame" x="37.5" y="0.0" width="152.5" height="42.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Navigation Stack"/>
                                         <connections>
                                             <action selector="actionButtonShowControllerUsingNavigaControl" destination="x33-9O-iBT" eventType="touchUpInside" id="BZ3-Uk-GCf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qd-R2-qJL">
+                                        <rect key="frame" x="0.0" y="72.5" width="227" height="42.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Present Using Own Encypt"/>
+                                        <connections>
+                                            <action selector="actionButtonPresentAndencyptionUsingOwn" destination="x33-9O-iBT" eventType="touchUpInside" id="RTt-vZ-Tyc"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmO-lH-Wm4">
-                                        <rect key="frame" x="5" y="72.5" width="196" height="42.5"/>
+                                        <rect key="frame" x="15.5" y="145" width="196" height="42.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Present Controller Left"/>
                                         <connections>
@@ -56,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jn-CZ-UNJ">
-                                        <rect key="frame" x="0.0" y="145" width="206" height="42.5"/>
+                                        <rect key="frame" x="10.5" y="217.5" width="206" height="42.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Present Controller Right"/>
                                         <connections>

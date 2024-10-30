@@ -25,6 +25,17 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func actionButtonPresentAndencyptionUsingOwn()
+    {
+        // if you want to encrypt your data pass value like this
+        let urlString  = "https://webview-staging.golootlo.pk/home?data=skTipOK4bJZ1%2F8VKHNwuYQw4EWhST2MGNYSwnUHSteul8RuBFxMf3xbLHt2wrrE%2Fsup3TKx7kEtpg8hnxHYyTZy5yKSAltcxQAXsD6wCaK4tXaq4j1oYYkQmjNSKB2PRWmEm9ze%2BlE%2FybfcQHmO6iY7otZDFadhcR5AuCYhpi6QebT1HTzIUq%2BA1xDsjVqFne8h5GR%2FaxANpZ%2Fw6%2FnVlemtchw0ief0U63b5JCDZd6dsewIp0pcswvzM4NQdWKdkArmXZ67G%2FOkthsFKErPsD%2BI%2FsZOF9LRgwb1y%2FAVsk8FDCxZNXoorGUe44MGnkuwuIM4IaWTAHYIl%2F1%2FK0mzuPA%3D%3D"
+        
+        let merchant = GolootloWebController(baseURL: urlString, delegate: self, dataObject: nil, appversion: "2.1.7", hideCross: false, crossAlignemtn: 0, pemfile: nil)
+        self.present(merchant, animated: true) {
+            print("loaded controller")
+        }
+    }
+    
     @IBAction func actionButtonShowControllerUsingRightPresnet()
     {
         let merchant = GolootloWebController(baseURL: "https://webview-staging.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: 1, pemfile: "Golootlo-Staging-Public-Key")
