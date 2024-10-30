@@ -159,20 +159,6 @@ public enum CrossButtonAlignemnt
        if self.navigationController != nil{
             setNavBarTitle()
         }
-        
-//        if let myImage = ImageLoader.loadImage(named: "Sad Face") {
-//            print("han")
-//        } else {
-//            print("Image not found")
-//        }
-//        
-//        if let myImage = ImageLoader.loadImage(named: "Close Icon") {
-//            print("han")
-//        } else {
-//            print("Image not found")
-//        }
-        
-        //self.view.bringSubviewToFront(self.loaderImageView!)
     }
     
     deinit {
@@ -204,16 +190,6 @@ public enum CrossButtonAlignemnt
          super.viewWillDisappear(animated)
         
         self.eventDelegate?.golootloViewWillDisappear(animated)
-        
-        #if swift(>=5.0)
-            if self.isMovingFromParent{
-                self.eventDelegate?.golootloWillMoveFromParent()
-            }
-        #else
-//            if self.isMovingFromParentViewController{
-//                self.eventDelegate?.golootloWillMoveFromParent()
-//            }
-        #endif
         
         if self.isMovingFromParent
         {
@@ -331,11 +307,6 @@ public enum CrossButtonAlignemnt
         errorView!.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(errorView!)
-//        #if swift(>=5.0)
-//            self.view.bringSubviewToFront(errorView!)
-//        #else
-//             self.view.bringSubview(toFront:errorView!)
-//        #endif
         self.view.bringSubviewToFront(errorView!)
         
         let centerY = errorView!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor,constant: -100)

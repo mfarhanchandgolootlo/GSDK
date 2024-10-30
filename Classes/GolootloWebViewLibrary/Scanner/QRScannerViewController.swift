@@ -161,12 +161,7 @@ internal class QRScannerViewController: UIViewController
             imageView.frame = self.view.bounds
             self.view.addSubview(imageView)
             
-            #if swift(>=5.0)
-                self.view.bringSubviewToFront(imageView)
-            
-            #else
-                self.view.bringSubview(toFront:imageView)
-            #endif
+            self.view.bringSubviewToFront(imageView)
             
             let label = UILabel()
             label.textColor = .white
@@ -192,13 +187,7 @@ internal class QRScannerViewController: UIViewController
             
             NSLayoutConstraint.activate([leading,trailing, bottomAnchor])
             
-            #if swift(>=5.0)
-                self.view.bringSubviewToFront(label)
-            
-            #else
-                self.view.bringSubview(toFront:label)
-            #endif
-            
+            self.view.bringSubviewToFront(label)
             
             let propertyLabel = UILabel()
             propertyLabel.textColor = .white
@@ -224,12 +213,8 @@ internal class QRScannerViewController: UIViewController
             
             NSLayoutConstraint.activate([propertyLabelCentreX, topAnchor,width])
             
-            #if swift(>=5.0)
             self.view.bringSubviewToFront(propertyLabel)
             
-            #else
-            self.view.bringSubview(toFront:propertyLabel)
-            #endif
             //self.view.bringSubview(toFront:label)
             //self.view.layer.addSublayer(self.topBar.layer)
         }
@@ -281,12 +266,7 @@ internal class QRScannerViewController: UIViewController
         let label = UILabel()
         
         self.view.addSubview(label)
-        #if swift(>=5.0)
         self.view.bringSubviewToFront(label)
-        #else
-            self.view.bringSubview(toFront:label)
-        #endif
-        
         label.text = "Golootlo requires camera access to scan QR code."
         
         label.numberOfLines = 2
@@ -310,11 +290,7 @@ internal class QRScannerViewController: UIViewController
         settingButton.addTarget(self, action: #selector(openSetting), for: .touchUpInside)
         settingButton.setTitleColor(UIColor.black, for: .normal)
         self.view.addSubview(settingButton)
-        #if swift(>=5.0)
         self.view.bringSubviewToFront(settingButton)
-        #else
-        self.view.bringSubview(toFront:settingButton)
-        #endif
         
         let settingCentreX  = settingButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         let settingY        = settingButton.top(toAnchor:label.bottomAnchor , space: 20)
@@ -328,22 +304,6 @@ internal class QRScannerViewController: UIViewController
     @objc func openSetting(){
         
         UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-        
-//        if #available(iOS 10.0, *){
-//            #if swift(>=5.0)
-//            UIApplication.shared.openURL(URL(string:UIApplication.openSettingsURLString)!)
-//            #else
-//                UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
-//            #endif
-//            
-//        }else{
-//             #if swift(>=5.0)
-//            UIApplication.shared.openURL(URL(string:UIApplication.openSettingsURLString)!)
-//            #else
-//                UIApplication.shared.openURL(URL(string:UIApplicationOpenSettingsURLString)!)
-//            #endif
-//        }
-        
     }
     func showScanAlert(channelName:String){
         
@@ -395,12 +355,7 @@ extension QRScannerViewController {
             //let stringURL = "https://\(url)/scanner?ref=index&qrCode=\(code)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
             
             if let navigation = self.navigationController{
-                #if swift(>=5.0)
-                    let childrens = navigation.children
-                #else
-                    let childrens = navigation.childViewControllers
-                #endif
-                
+                let childrens = navigation.children
                 let vc = childrens.filter{$0.isKind(of:GolootloWebController.self)}.first as! GolootloWebController
                 //vc.stringURL = stringURL
                 vc.verifyQRData(QRData:code )

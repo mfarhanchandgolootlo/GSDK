@@ -23,13 +23,17 @@ pod 'GSDKMerchant'
 ## Installation using tags
 
 ```ruby
-  pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.39'
+  pod 'GSDKMerchant', git: 'https://github.com/mfarhanchandgolootlo/GSDK.git', :tag => '0.0.40'
 ```
 
 ## Xcode Setting
 ```ruby
     Update your Xcode project build (target) option 
     put ENABLE_USER_SCRIPT_SANDBOXING to 'No', default is 'YES'
+```
+## Pod Deployment Xcode Target
+```ruby
+  Deployment Target -> 12.0
 ```
 
 ## Usage

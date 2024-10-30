@@ -59,8 +59,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     func stopUpdatingLocation() {
         print("Stop Location Updates")
         self.locationManager?.stopUpdatingLocation()
-        
-       
+        self.locationManagertmp.stopUpdatingLocation()
     }
     
     // CLLocationManagerDelegate
@@ -76,6 +75,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         
         // use for real time update location
         updateLocation(currentLocation: location)
+        stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
