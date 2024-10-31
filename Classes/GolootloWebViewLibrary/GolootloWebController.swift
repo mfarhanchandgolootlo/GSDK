@@ -100,7 +100,7 @@ import CoreLocation
 //  MARK: - Comment Old Code
     
     @objc
-    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String?, appversion: String, hideCross: Bool, crossAlignemtn: CrossButtonAlignemnt, pemfile: String?)
+    public init(baseURL: String?, delegate: GolootloEventDelegate, dataObject: String? = nil, appversion: String, hideCross: Bool, crossAlignemtn: CrossButtonAlignemnt, pemfile: String? = nil)
     {
         super.init(nibName: nil, bundle: nil)
         
