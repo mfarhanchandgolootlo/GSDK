@@ -104,8 +104,11 @@ crossAlignemtn = .right
 
 by default cross button alignment is ".left"
  
-alignment of cross button when you present our mercantController, 
+cross button will show when you present our mercantController,
+ie,. self.present(merchant, animated: true)
+
 otherwise when you push our controller then it will not show.
+ie,. self.navigationController?.pushViewController(merchant, animated: true)
 ```
 
 ```ruby
