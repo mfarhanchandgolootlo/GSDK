@@ -102,6 +102,8 @@ where
 crossAlignemtn = .left 
 crossAlignemtn = .right
 
+by default cross button alignment is ".left"
+ 
 alignment of cross button when you present our mercantController, 
 otherwise when you push our controller then it will not show.
 ```
