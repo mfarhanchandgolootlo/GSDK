@@ -270,7 +270,7 @@ import CoreLocation
         
         contentController.add(self, name: "locationHandler")
         contentController.add(self, name: "webViewEvent")
-        //contentController.add(self, name: "getCurrentPosition")
+        contentController.add(self, name: "getCurrentPosition")
         contentController.addUserScript(funcScript)
         contentController.addUserScript(locationScript)
         contentController.addUserScript(script)
@@ -612,7 +612,7 @@ extension GolootloWebController:WKScriptMessageHandler{
 
     // MARK: - WKScriptMessageHandler
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "locationHandler" {
+        if message.name == "locationHandler" || message.name == "getCurrentPosition" {
             
             guard let location = self.currentLocation else {return}
             
@@ -620,15 +620,21 @@ extension GolootloWebController:WKScriptMessageHandler{
             
             
             webView!.evaluateJavaScript("__LATITUDE__ = \(Double (location.coordinate.latitude))", completionHandler: { (result, error) in
-                
+                print("__LATITUDE__")
+                print(result)
+                print(error)
             })
             
             webView!.evaluateJavaScript("__LONGITUDE__ = \(Double(location.coordinate.longitude))") { (result, error) in
-                
+                print("__LONGITUDE__")
+                print(result)
+                print(error)
             }
 
             webView!.evaluateJavaScript("updateLocation(\((location.coordinate.latitude)),\((location.coordinate.longitude)))") { (result, error) in
-                           
+                print("updateLocation")
+                print(result)
+                print(error)
                        }
             
         }else if message.name == "webViewEvent"{

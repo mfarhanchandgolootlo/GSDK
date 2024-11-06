@@ -71,6 +71,9 @@ import GSDKMerchant
 
 let merchantController = GolootloWebController(baseURL: "put your base url here", delegate: self, dataObject: dataValue, appversion: "appversion", hideCross: false, crossAlignemtn: .right, pemfile: "Public-Key")
     
+put your "baseURL" url like this
+let baseURL  = "https://abc.golootlo.pk/home?
+    
 dataValue = "UserId=clientName&Password=123456&FirstName=Test&LastName=User&Phone=00000000348"  
 
 you need to  put this datavalue in or sdk object value i.e, dataObject
@@ -81,6 +84,8 @@ pem = Public-Key.pem
 put your .pem file in the main project and give proper name 
 in order to encode data (put pem file name without extension .pem)
     
+let merchantController = GolootloWebController(baseURL: "https://abc.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: .left, pemfile: "Golootlo-Staging-Public-Key")
+
 "you can present/ push our merchantController in stack"
 ```
 OR
