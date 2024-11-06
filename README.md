@@ -85,7 +85,7 @@ put your .pem file in the main project and give proper name
 in order to encode data (put pem file name without extension .pem)
     
 example: ie,.
-let merchantController = GolootloWebController(baseURL: "https://abc.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: .left, pemfile: "Public-Key")
+let merchantController = GolootloWebController(baseURL: baseURL, delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: .left, pemfile: "Public-Key")
 
 "you can present/ push our merchantController in stack"
 ```
