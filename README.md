@@ -95,7 +95,12 @@ OR
 ```ruby
 
 put your "baseURL" encyrpt url like this
-let baseURL  = "https://baseurl/home?data=skTipOK...."
+let baseURL  = "https://abc.golootlo.pk/home?
+
+let encyptedData = baseURL+"data="+//put your encyptedString using our .pem file
+
+example: ie,.
+let baseURL  = "https://baseurl/home?data=mzuPA%3D%3D...."
     
 let merchant = GolootloWebController(baseURL: baseURL, delegate: self,appversion: "2.1.7", hideCross: false, crossAlignemtn: .left)
     
