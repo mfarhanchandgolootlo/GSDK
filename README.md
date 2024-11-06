@@ -84,7 +84,8 @@ pem = Public-Key.pem
 put your .pem file in the main project and give proper name 
 in order to encode data (put pem file name without extension .pem)
     
-let merchantController = GolootloWebController(baseURL: "https://abc.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: .left, pemfile: "Golootlo-Staging-Public-Key")
+example: ie,.
+let merchantController = GolootloWebController(baseURL: "https://abc.golootlo.pk/home?", delegate: self, dataObject: dataValue, appversion: "2.1.7", hideCross: false, crossAlignemtn: .left, pemfile: "Public-Key")
 
 "you can present/ push our merchantController in stack"
 ```
